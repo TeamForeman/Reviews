@@ -15,14 +15,9 @@ var randomNumberBetween = (min, max, oneDecimalPoint) => {
 
 //CHOOSING A RANDOM PHOTO
 var photoShuffle = (pics) => {
-  pics.sort(() => Math.random() - 0.5);
+  var newOrder = pics.sort(() => Math.random() - 0.5);
+  return newOrder;
 };
-
-
-//ASSIGNING VARIABLES FOR FASTER REFERENCE
-// var ratingScore = randomNumberBetween(1, 5, true);
-// var numberOfReviews = randomNumberBetween(4, 16);
-// var userName = faker.name.findName();
 
 //LINKS TO ALL THE PROFILE PICTURES
 var profilePics = [
@@ -46,34 +41,57 @@ var profilePics = [
 
 //LISTING CREATER:
 var createAListing = () => {
+  var bnb = [];
   // CREATES RATINGS
+  var ratings = [];
   var r1 = randomNumberBetween(1, 5, true);
   var r2 = randomNumberBetween(1, 5, true);
   var r3 = randomNumberBetween(1, 5, true);
   var r4 = randomNumberBetween(1, 5, true);
   var r5 = randomNumberBetween(1, 5, true);
   var r6 = randomNumberBetween(1, 5, true);
-  var average = Math.floor(((r1 + r2 + r3 + r4 + r5 + r6) * 10) / 6) / 10;
+  var av = Math.floor(((r1 + r2 + r3 + r4 + r5 + r6) * 10) / 6) / 10;
+
+  ratings.push({
+    average: av,
+    cleanliness: r1,
+    communication: r2,
+    checkin: r3,
+    accuracy: r4,
+    location: r5,
+    value: r6
+  });
+
 
   // CREATES REVIEWS
-  var reviewers = [];
-  var numberOfReviews = randomNumberBetween(4, 16);
+  var reviews = {posts: []};
+  var numberOfReviews = randomNumberBetween(3, 15);
   var pictures = photoShuffle(profilePics);
   while (numberOfReviews > 0) {
     var userName = faker.name.findName();
     var picUrl = pictures[numberOfReviews];
-
-
-
+    var date = `${faker.date.month()} ${randomNumberBetween(2008, 2020)}`;
+    var paragraph = faker.lorem.paragraphs();
+    reviews.posts.push({
+      name: userName,
+      date: date,
+      reviewBody: paragraph,
+      profilePic: picUrl
+    });
+    numberOfReviews--;
   }
-
+  bnb.push(ratings, reviews);
+  return bnb;
 };
 
 
 
-console.log('ratings?', ratingScore);
-console.log('ratings?', ratingScore);
-console.log('Amount of reviews?', numberOfReviews);
-console.log('Amount of reviews?', numberOfReviews);
-console.log('name: ', userName);
-console.log('name: ', userName);
+// console.log('ratings?', ratingScore);
+// console.log('ratings?', ratingScore);
+// console.log('Amount of reviews?', faker.date.month());
+// console.log('Amount of reviews?', numberOfReviews);
+// console.log('name: ', userName);
+// console.log('name: ', userName);
+
+var date = `${faker.date.month()} ${randomNumberBetween(2008, 2020)}`;
+console.log(console.log(createAListing()));
