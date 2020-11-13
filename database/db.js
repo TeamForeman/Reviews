@@ -15,5 +15,6 @@ const getAllTheData = (callback) => {
 };
 
 module.exports = {
-  getAllTheData
+  getAllTheData,
+  con
 };
