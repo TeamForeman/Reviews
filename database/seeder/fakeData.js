@@ -1,9 +1,10 @@
 const faker = require('faker');
-// const mysql = require('mysql');
-const con = require('../db.js');
+const db = require('../db.js');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
 
 //RANDOM NUMBER GENERATOR
-var randomNumberBetween = (min, max, oneDecimalPoint) => {
+const randomNumberBetween = (min, max, oneDecimalPoint) => {
   if (oneDecimalPoint) {
     min *= 10;
     max *= 10;
@@ -14,7 +15,7 @@ var randomNumberBetween = (min, max, oneDecimalPoint) => {
 };
 
 //CHOOSING A RANDOM PHOTO
-var photoShuffle = (pics) => {
+const photoShuffle = (pics) => {
   var newOrder = pics.sort(() => Math.random() - 0.5);
   return newOrder;
 };
@@ -40,11 +41,10 @@ var profilePics = [
 ];
 
 //LISTING CREATER:
-var createAListing = () => {
+const createAListing = () => {
   var bnb = {};
 
   // CREATES RATINGS
-  // var ratings = [];
   var r1 = randomNumberBetween(1, 5, true);
   var r2 = randomNumberBetween(1, 5, true);
   var r3 = randomNumberBetween(1, 5, true);
@@ -61,7 +61,6 @@ var createAListing = () => {
     location: r5,
     value: r6
   };
-
 
   // CREATES REVIEWS
   var reviews = [];
@@ -83,13 +82,90 @@ var createAListing = () => {
     numberOfReviews--;
   }
 
-  bnb.rating = ratings;
+  bnb.ratings = ratings;
   bnb.reviews = reviews;
   return bnb;
 };
 
+//CREATE A MEGA OBJECT
+const make100 = () => {
+  var count = 1;
+  var all100 = {};
+  var allReviews = [];
+  var allRatings = [];
+  while (count !== 101) {
+    var data = createAListing();
+    //SETS THE RELATIONAL ID
+    data.ratings.ratingsId = count;
+    data.reviews.map(review => {
+      review.ratingsId = count;
+    });
+    allRatings.push(data.ratings);
+    allReviews = allReviews.concat(data.reviews);
+    count++;
+  }
+  // console.log(allReviews);
+  all100.ratings = allRatings;
+  all100.reviews = allReviews;
+  return all100;
+};
 
-console.log(createAListing());
+//WRITE TO CSV FILES
+const writeToCsv = () =>{
+  var fullPackage = make100();
+  const csvRatingWriter = createCsvWriter({
+    path: './database/seeder/ratings.csv',
+    header: [
+      {id: 'average', title: 'AVERAGE'},
+      {id: 'cleanliness', title: 'CLEANLINESS'},
+      {id: 'communication', title: 'COMMUNICATION'},
+      {id: 'checkin', title: 'CHECKIN'},
+      {id: 'accuracy', title: 'ACCURACY'},
+      {id: 'location', title: 'LOCATION'},
+      {id: 'value', title: 'VALUE'},
+      {id: 'ratingsId', title: 'RATINGS_ID'}
+    ]
+  });
+  csvRatingWriter.writeRecords(fullPackage.ratings)
+    .then(() => {
+      console.log('sucessfull writing the ratings');
+    });
+  const cvsReviewWriter = createCsvWriter({
+    path: './database/seeder/reviews.csv',
+    header: [
+      {id: 'name', title: 'NAME'},
+      {id: 'date', title: 'DATE'},
+      {id: 'reviewBody', title: 'REVIEW_BODY'},
+      {id: 'profilePic', title: 'PROFILE_PIC'},
+      {id: 'ratingsId', title: 'RATINGS_ID'}
+    ]
+  });
+  // console.log(fullPackage.reviews);
+
+  cvsReviewWriter.writeRecords(fullPackage.reviews)
+    .then(() => {
+      console.log('sucessfull writing the reviews');
+    });
+};
+
+writeToCsv();
+
+
+
+
+
+//console.log(createAListing()); //{ rating: {}, reviews:[{},{}] }
+// var data = createAListing();
+// var query = `BEGIN;
+// INSERT INTO users (username, password)
+//   VALUES('test', 'test');
+// INSERT INTO profiles (userid, bio, homepage)
+//   VALUES(LAST_INSERT_ID(),'Hello world!', 'http://www.stackoverflow.com');
+// COMMIT`
+// db.con.query('select * from reviews', (err, results) => {
+//   err ? console.log(err) : console.log(results);
+
+// });
 
 
 module.exports = {
