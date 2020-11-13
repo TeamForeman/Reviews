@@ -2,6 +2,11 @@ const faker = require('faker');
 const db = require('../db.js');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
+/*
+-----------------------------------------
+RANDOM GENERATORS
+-----------------------------------------
+*/
 
 //RANDOM NUMBER GENERATOR
 const randomNumberBetween = (min, max, oneDecimalPoint) => {
@@ -14,11 +19,17 @@ const randomNumberBetween = (min, max, oneDecimalPoint) => {
   }
 };
 
-//CHOOSING A RANDOM PHOTO
+//SHUFFLES PHOTOS LIST
 const photoShuffle = (pics) => {
   var newOrder = pics.sort(() => Math.random() - 0.5);
   return newOrder;
 };
+
+/*
+-----------------------------------------
+CREATING ELEMENTS
+-----------------------------------------
+*/
 
 //LINKS TO ALL THE PROFILE PICTURES
 var profilePics = [
@@ -52,6 +63,7 @@ const createAListing = () => {
   var r5 = randomNumberBetween(1, 5, true);
   var r6 = randomNumberBetween(1, 5, true);
   var av = Math.floor(((r1 + r2 + r3 + r4 + r5 + r6) * 10) / 6) / 10;
+
   var ratings = {
     average: av,
     cleanliness: r1,
@@ -67,6 +79,7 @@ const createAListing = () => {
   reviews;
   var numberOfReviews = randomNumberBetween(3, 15);
   var pictures = photoShuffle(profilePics);
+
   while (numberOfReviews > 0) {
     var userName = faker.name.findName();
     var picUrl = pictures[numberOfReviews];
@@ -93,6 +106,7 @@ const make100 = () => {
   var all100 = {};
   var allReviews = [];
   var allRatings = [];
+
   while (count !== 101) {
     var data = createAListing();
     //SETS THE RELATIONAL ID
@@ -104,15 +118,22 @@ const make100 = () => {
     allReviews = allReviews.concat(data.reviews);
     count++;
   }
-  // console.log(allReviews);
   all100.ratings = allRatings;
   all100.reviews = allReviews;
   return all100;
 };
 
+/*
+-----------------------------------------
+WRITING TO CSV FILES
+-----------------------------------------
+*/
+
 //WRITE TO CSV FILES
 const writeToCsv = () =>{
   var fullPackage = make100();
+
+  //RATING CSV WRITER
   const csvRatingWriter = createCsvWriter({
     path: './database/seeder/ratings.csv',
     header: [
@@ -126,10 +147,13 @@ const writeToCsv = () =>{
       {id: 'ratingsId', title: 'RATINGS_ID'}
     ]
   });
+
   csvRatingWriter.writeRecords(fullPackage.ratings)
     .then(() => {
       console.log('sucessfull writing the ratings');
     });
+
+  //REVIEW CVS WRITER
   const cvsReviewWriter = createCsvWriter({
     path: './database/seeder/reviews.csv',
     header: [
@@ -140,7 +164,6 @@ const writeToCsv = () =>{
       {id: 'ratingsId', title: 'RATINGS_ID'}
     ]
   });
-  // console.log(fullPackage.reviews);
 
   cvsReviewWriter.writeRecords(fullPackage.reviews)
     .then(() => {
@@ -150,24 +173,13 @@ const writeToCsv = () =>{
 
 writeToCsv();
 
-
-
-
-
-//console.log(createAListing()); //{ rating: {}, reviews:[{},{}] }
-// var data = createAListing();
-// var query = `BEGIN;
-// INSERT INTO users (username, password)
-//   VALUES('test', 'test');
-// INSERT INTO profiles (userid, bio, homepage)
-//   VALUES(LAST_INSERT_ID(),'Hello world!', 'http://www.stackoverflow.com');
-// COMMIT`
-// db.con.query('select * from reviews', (err, results) => {
-//   err ? console.log(err) : console.log(results);
-
-// });
+/*
+-----------------------------------------
+READ CVS FILES, QUERY TO DATABASE
+-----------------------------------------
+*/
 
 
 module.exports = {
-
+//JUST SO I CAN SEE CHANGES IN THE SERVER
 };
