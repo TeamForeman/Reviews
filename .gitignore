@@ -6,6 +6,9 @@ npm
 npm-debug.log
 node_modules/
 
+database/seeder/ratings.csv
+database/seeder/reviews.csv
+
 pids
 *.pid
 logs
@@ -25,5 +28,3 @@ build/
 dist/
 
 # csv files for seeding the database
-ratings.csv/
-reviews.csv/

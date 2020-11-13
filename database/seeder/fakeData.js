@@ -1,5 +1,7 @@
 const faker = require('faker');
 const db = require('../db.js');
+const fs = require('fs');
+const fastcsv = require('fast-csv');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 /*
@@ -178,6 +180,29 @@ writeToCsv();
 READ CVS FILES, QUERY TO DATABASE
 -----------------------------------------
 */
+
+var reviewsStream = fs.createReadStream('./reviews.csv');
+var ratingsStream = fs.createReadStream('./ratings.csv');
+var reviewsData = [];
+var ratingsData = [];
+
+var readCsvFile = (stream, dataStorage) => {
+  var csvStream = fastcsv
+    .parse()
+    .on('data', (data) => {
+      dataStorage.push(data);
+    })
+    .on('end', () => {
+      //REMOVES THE FIRST LINE OF FILE(HEADER)
+      dataStorage.shift();
+    });
+  stream.pipe(csvStream);
+};
+
+readCsvFile(ratingsStream, ratingsData);
+readCsvFile(reviewsStream, reviewsData);
+
+console.log(ratingsData);
 
 
 module.exports = {
