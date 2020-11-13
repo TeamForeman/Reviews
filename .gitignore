@@ -24,3 +24,6 @@ coverage
 build/
 dist/
 
+# csv files for seeding the database
+ratings.csv/
+reviews.csv/
