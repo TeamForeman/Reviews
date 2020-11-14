@@ -11,8 +11,8 @@ con.connect(err => {
 });
 
 const getAllDataFromTable = (table, callback) => {
-  var query = 'SELECT * FROM ?';
-  con.query(query, [table], (err, res) => {
+  var query = `SELECT * FROM ${table} WHERE ratings_id = 1`;
+  con.query(query, (err, res) => {
     err ? callback(err) : callback(null, res);
   });
 };
