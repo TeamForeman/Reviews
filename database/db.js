@@ -10,11 +10,14 @@ con.connect(err => {
   err ? console.error(err) : console.log('Connected to the database!!');
 });
 
-const getAllTheData = (callback) => {
-
+const getAllDataFromTable = (table, callback) => {
+  var query = 'SELECT * FROM ?';
+  con.query(query, [table], (err, res) => {
+    err ? callback(err) : callback(null, res);
+  });
 };
 
 module.exports = {
-  getAllTheData,
+  getAllDataFromTable,
   con
 };
