@@ -180,6 +180,8 @@ writeToCsv();
 READ CVS FILES, QUERY TO DATABASE
 -----------------------------------------
 */
+
+// FUNCTION TO LOAD MYSQL
 const downloadIntoDatabase = (tableName, data) => {
   var queryString;
   if (tableName === 'reviews') {
@@ -194,7 +196,7 @@ const downloadIntoDatabase = (tableName, data) => {
   });
 };
 
-
+//function to read csv files
 var ratingsStream = fs.createReadStream('database/seeder/ratings.csv');
 var ratingsData = [];
 
@@ -218,14 +220,5 @@ var readCsvFile = (stream, dataStorage, table) => {
   stream.pipe(csvStream);
 };
 
-
 readCsvFile(ratingsStream, ratingsData, 'ratings');
-
 readCsvFile(reviewsStream, reviewsData, 'reviews');
-
-// console.log(reviewsData);
-
-
-module.exports = {
-//JUST SO I CAN SEE CHANGES IN THE SERVER
-};
