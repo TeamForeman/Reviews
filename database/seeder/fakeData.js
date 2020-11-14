@@ -86,7 +86,7 @@ const createAListing = () => {
     var userName = faker.name.findName();
     var picUrl = pictures[numberOfReviews];
     var date = `${faker.date.month()} ${randomNumberBetween(2008, 2020)}`;
-    var paragraph = faker.lorem.paragraphs();
+    var paragraph = faker.lorem.paragraph();
 
     reviews.push({
       name: userName,
@@ -180,29 +180,50 @@ writeToCsv();
 READ CVS FILES, QUERY TO DATABASE
 -----------------------------------------
 */
+const downloadIntoDatabase = (tableName, data) => {
+  var queryString;
+  if (tableName === 'reviews') {
+    queryString = `INSERT INTO ${tableName} (name, date, reviewBody, profilePic, ratings_id) VALUES ?`;
+  } else {
+    queryString = `INSERT INTO ${tableName} (average, cleanliness, communication, checkin, accuracy, location, value, ratings_id) VALUES ?`;
+  }
+  return new Promise((resolve, reject) => {
+    db.con.query(queryString, [data], (err, res) => {
+      err ? reject(err) : resolve(console.log(`wahoo ${tableName} filled`));
+    });
+  });
+};
 
-var reviewsStream = fs.createReadStream('./reviews.csv');
-var ratingsStream = fs.createReadStream('./ratings.csv');
-var reviewsData = [];
+
+var ratingsStream = fs.createReadStream('database/seeder/ratings.csv');
 var ratingsData = [];
 
-var readCsvFile = (stream, dataStorage) => {
+var reviewsStream = fs.createReadStream('database/seeder/reviews.csv');
+var reviewsData = [];
+
+var readCsvFile = (stream, dataStorage, table) => {
   var csvStream = fastcsv
     .parse()
+    .on('uncaughtException', function (err) {
+      console.log(err);
+    })
     .on('data', (data) => {
       dataStorage.push(data);
     })
     .on('end', () => {
       //REMOVES THE FIRST LINE OF FILE(HEADER)
       dataStorage.shift();
+      downloadIntoDatabase(table, dataStorage);
     });
   stream.pipe(csvStream);
 };
 
-readCsvFile(ratingsStream, ratingsData);
-readCsvFile(reviewsStream, reviewsData);
 
-console.log(ratingsData);
+readCsvFile(ratingsStream, ratingsData, 'ratings');
+
+readCsvFile(reviewsStream, reviewsData, 'reviews');
+
+// console.log(reviewsData);
 
 
 module.exports = {

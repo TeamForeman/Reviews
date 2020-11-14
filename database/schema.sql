@@ -18,10 +18,10 @@ CREATE TABLE ratings(
 
 CREATE TABLE reviews (
   reviews_id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(20),
-  date VARCHAR(10),
-  reviewBody VARCHAR(200),
-  profilePic VARCHAR(50),
+  name VARCHAR(30),
+  date VARCHAR(30),
+  reviewBody VARCHAR(1000),
+  profilePic VARCHAR(200),
   ratings_id INT,
   PRIMARY KEY (reviews_id),
   FOREIGN KEY (ratings_id)
@@ -29,10 +29,16 @@ CREATE TABLE reviews (
 );
 
 -- SAMPLE DATA
+-- LOAD DATA INFILE ''
+-- INTO TABLE table_name
+-- FIELDS TERMINATED BY ','
+-- ENCLOSED BY '"'
+-- LINES TERMINATED BY '/n'
+-- IGNORE 1 ROWS;
 
-INSERT INTO ratings (cleanliness, communication, checkin, accuracy, location, value) VALUES (4.4, 3.6, 2.4, 5.0, 3.4, 2.2);
-INSERT INTO reviews (name, date, reviewBody, profilePic, ratings_id) VALUES ('sally', 'OCT 2020', 'It was sooo good', 'url.com', 1);
-INSERT INTO reviews (name, date, reviewBody, profilePic, ratings_id) VALUES ('jim', 'OCT 2020', 'It was ok', 'url.com', 1);
+-- INSERT INTO ratings (cleanliness, communication, checkin, accuracy, location, value) VALUES (4.4, 3.6, 2.4, 5.0, 3.4, 2.2);
+-- INSERT INTO reviews (name, date, reviewBody, profilePic, ratings_id) VALUES ('sally', 'OCT 2020', 'It was sooo good', 'url.com', 1);
+-- INSERT INTO reviews (name, date, reviewBody, profilePic, ratings_id) VALUES ('jim', 'OCT 2020', 'It was ok', 'url.com', 1);
 
 -- TO SEED THE DATABASE
   -- cd into the Customer-Reviews-Service folder
