@@ -11,10 +11,10 @@ const AllReviews = (props) => {
           </a>
         </span>
         <span className='name-date'>
-          <h5>name</h5>
-          <h6>date</h6>
+          <p>name</p>
+          <p>date</p>
         </span>
-        <p>some words about how good it was</p>
+        <p className='review-body'>some words about how good it was</p>
       </div>
       <div className='review'>
         <span className='profile-picture'>
@@ -23,10 +23,10 @@ const AllReviews = (props) => {
           </a>
         </span>
         <span className='name-date'>
-          <h5>name</h5>
-          <h6>date</h6>
+          <p>name</p>
+          <p>date</p>
         </span>
-        <p>some words about how good it was</p>
+        <p className='review-body'>some words about how good it was</p>
       </div>
     </div>
   );
