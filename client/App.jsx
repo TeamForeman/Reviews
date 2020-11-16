@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Ratings from './Ratings.jsx';
+import AllReviews from './AllReviews.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +26,10 @@ class App extends React.Component {
 
   render () {
     return (
-      <h1>World</h1>
+      <div>
+        <Ratings />
+        <AllReviews />
+      </div>
     );
   }
 }

@@ -1,0 +1,39 @@
+/*
+=========================================
+    Ratings
+=========================================
+ */
+.rating {
+  width: 25%;
+  float: left;
+  padding-bottom: 10px;
+}
+
+.rating-box {
+
+}
+
+/*
+=========================================
+    Reviews
+=========================================
+ */
+
+.review {
+  /* border-style: solid; */
+  display: inline-block;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.name-date, .profile-picture {
+  display: inline-block;
+}
+
+.profile-picture {
+  padding: 10px;
+}
+
+img {
+  border-radius: 50%;
+}
