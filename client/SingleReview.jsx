@@ -11,7 +11,6 @@ const SingleReview = (props) => {
       <span className='name-date'>
         <p>{props.review.name}</p>
         <p>{props.review.date}</p>
-        <br></br>
       </span>
       <p className='review-body'>{props.review.reviewBody}</p>
     </div>

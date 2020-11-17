@@ -3,19 +3,21 @@ import React from 'react';
 const Ratings = (props) => {
 
   return (
-    <div className='rating-box'>
-      <h3>🧸 {props.rate.average}  ({props.numOfReviews} reviews)</h3>
-      <div>
-        <span className='rating'>Cleanliness:</span><span className='rating'>{props.rate.cleanliness}</span>
-        <span className='rating'>Accuracy:</span><span className='rating'>{props.rate.accuracy}</span>
-      </div>
-      <div>
-        <span className='rating'>Communication:</span><span className='rating'>{props.rate.communication}</span>
-        <span className='rating'>Location:</span><span className='rating'>{props.rate.location}</span>
-      </div>
-      <div>
-        <span className='rating'>Check-in:</span><span className='rating'>{props.rate.checkin}</span>
-        <span className='rating'>Value:</span><span className='rating'>{props.rate.value}</span>
+    <div>
+      <h3 className='average'>🧸 {props.rate.average}  ({props.numOfReviews} reviews)</h3>
+      <div className='ratings-box'>
+        <div className='rating'>Cleanliness:</div>
+        <div className='rating'>{props.rate.cleanliness}</div>
+        <div className='rating'>Accuracy:</div>
+        <div className='rating'>{props.rate.accuracy}</div>
+        <div className='rating'>Communication:</div>
+        <div className='rating'>{props.rate.communication}</div>
+        <div className='rating'>Location:</div>
+        <div className='rating'>{props.rate.location}</div>
+        <div className='rating'>Check-in:</div>
+        <div className='rating'>{props.rate.checkin}</div>
+        <div className='rating'>Value:</div>
+        <div className='rating'>{props.rate.value}</div>
       </div>
     </div>
   );

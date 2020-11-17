@@ -4,7 +4,7 @@ import SingleReview from './SingleReview.jsx';
 const AllReviews = (props) => {
 
   return (
-    <div>
+    <div className='reviews-box'>
       {props.reviews.map(review => {
         return (<SingleReview review={review} />);
       })}
