@@ -1,7 +1,10 @@
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
+import App from '../client/App.jsx';
+import Adapter from 'enzyme-adapter-react-16';
 
 
 
-
-test('there should be 100 listings in the database', () => {
-  expect(true).toBe(true);
+test('should render hello', () => {
+  expect(shallow(<App />).contains(<div>hello</div>)).toBe(true);
 });

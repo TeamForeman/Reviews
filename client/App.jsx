@@ -6,11 +6,20 @@ import AllReviews from './AllReviews.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      ratings: [],
+      reviews: []
+    };
   }
   componentDidMount () {
+    console.log('location:', window.location);
+
     axios.get('/beartnt/ratings')
       .then(data => {
         console.log(data.data);
+        this.setState({
+          ratings: data.data[0]
+        });
       })
       .catch(err => {
         console.log(err);
@@ -18,6 +27,9 @@ class App extends React.Component {
     axios.get('/beartnt/reviews')
       .then(data => {
         console.log(data.data);
+        this.setState({
+          reviews: data.data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -26,9 +38,11 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
-        <Ratings />
-        <AllReviews />
+      <div className='full-body'>
+        <div>Reviews</div>
+        <Ratings rate={this.state.ratings} numOfReviews={this.state.reviews.length}/>
+        <AllReviews reviews={this.state.reviews}/>
+        <button>See all {this.state.reviews.length} reviews</button>
       </div>
     );
   }
