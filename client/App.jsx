@@ -14,21 +14,18 @@ class App extends React.Component {
   componentDidMount () {
     console.log('location:', window.location);
 
-    axios.get('/beartnt/ratings')
-      .then(data => {
-        console.log(data.data);
-        this.setState({
-          ratings: data.data[0]
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
     axios.get('/beartnt/reviews')
       .then(data => {
         console.log(data.data);
         this.setState({
           reviews: data.data
+        });
+        return axios.get('/beartnt/ratings');
+      })
+      .then(data => {
+        console.log(data.data);
+        this.setState({
+          ratings: data.data[0]
         });
       })
       .catch(err => {

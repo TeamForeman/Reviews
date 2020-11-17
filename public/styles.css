@@ -29,10 +29,14 @@
 }
 
 .base-layer {
-  height: 10px;
+  height: 7px;
   background-color: grey;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 100%;
+}
+
+.score-bar {
+  margin-top: 6px;
 }
 
 /*

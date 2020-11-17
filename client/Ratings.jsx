@@ -2,11 +2,11 @@ import React from 'react';
 
 const Ratings = (props) => {
 
-  var percentage = (score) => {
+  var percentageBar = (score) => {
     var styles = {
-      height: '10px',
+      height: '7px',
       backgroundColor: 'black',
-      borderRadius: '10px'
+      borderRadius: '15px'
     };
     styles.width = (score / 5 * 100) + '%';
     console.log('here?', styles);
@@ -19,9 +19,9 @@ const Ratings = (props) => {
       <div className='ratings-box'>
         <div className='rating'>Cleanliness:</div>
 
-        <div className='rating'>
+        <div className='rating score-bar'>
           <div className='base-layer'>
-            <div style={percentage(props.rate.cleanliness)}></div>
+            <div style={percentageBar(props.rate.cleanliness)}></div>
           </div>
         </div>
 
@@ -32,8 +32,8 @@ const Ratings = (props) => {
         <div className='rating'>Accuracy:</div>
 
         <div className='rating'>
-          <div className='base-layer'>
-            <div style={percentage(props.rate.accuracy)}></div>
+          <div className='base-layer score-bar'>
+            <div style={percentageBar(props.rate.accuracy)}></div>
           </div>
         </div>
 
@@ -44,8 +44,8 @@ const Ratings = (props) => {
         <div className='rating'>Communication:</div>
 
         <div className='rating'>
-          <div className='base-layer'>
-            <div style={percentage(props.rate.communication)}></div>
+          <div className='base-layer score-bar'>
+            <div style={percentageBar(props.rate.communication)}></div>
           </div>
         </div>
 
@@ -56,8 +56,8 @@ const Ratings = (props) => {
         <div className='rating'>Location:</div>
 
         <div className='rating'>
-          <div className='base-layer'>
-            <div style={percentage(props.rate.location)}></div>
+          <div className='base-layer score-bar'>
+            <div style={percentageBar(props.rate.location)}></div>
           </div>
         </div>
 
@@ -68,8 +68,8 @@ const Ratings = (props) => {
         <div className='rating'>Check-in:</div>
 
         <div className='rating' >
-          <div className='base-layer'>
-            <div style={percentage(props.rate.checkin)}></div>
+          <div className='base-layer score-bar'>
+            <div style={percentageBar(props.rate.checkin)}></div>
           </div>
         </div>
         <div className='rating score'>
@@ -79,8 +79,8 @@ const Ratings = (props) => {
         <div className='rating'>Value:</div>
 
         <div className='rating'>
-          <div className='base-layer'>
-            <div style={percentage(props.rate.value)}></div>
+          <div className='base-layer score-bar'>
+            <div style={percentageBar(props.rate.value)}></div>
           </div>
         </div>
 
