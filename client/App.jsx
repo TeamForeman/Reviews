@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import AllReviews from './AllReviews.jsx';
+import PopUpModal from './PopUpModal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class App extends React.Component {
         <div>Reviews</div>
         <Ratings rate={this.state.ratings} numOfReviews={this.state.reviews.length}/>
         <AllReviews reviews={this.state.reviews}/>
-        <button>See all {this.state.reviews.length} reviews</button>
+        <PopUpModal reviews={this.state.reviews} ratings={this.state.ratings}/>
       </div>
     );
   }
