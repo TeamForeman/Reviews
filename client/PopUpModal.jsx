@@ -11,6 +11,8 @@ const PopUpModal = (props) => {
 
   const toggleShow = () => setShow(!show);
 
+
+
   return (
     <>
       <button onClick={toggleShow}>See all {props.reviews.length} reviews</button>

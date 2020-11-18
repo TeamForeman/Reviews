@@ -14,17 +14,19 @@ class App extends React.Component {
   }
   componentDidMount () {
     console.log('location:', window.location);
+    var id = window.location.pathname.split('/');
+    id = id[id.length - 1];
 
-    axios.get('/beartnt/reviews')
+    axios.get(`/beartnt/reviews/${id}`)
       .then(data => {
-        console.log(data.data);
+        console.log('reviews', data.data);
         this.setState({
           reviews: data.data
         });
-        return axios.get('/beartnt/ratings');
+        return axios.get(`/beartnt/ratings/${id}`);
       })
       .then(data => {
-        console.log(data.data);
+        console.log('ratings', data.data);
         this.setState({
           ratings: data.data[0]
         });
