@@ -64,6 +64,7 @@ class App extends React.Component {
         <PopUpModal
           reviews={this.state.reviews}
           ratings={this.state.ratings}
+          numOfReviews={this.state.reviews.length}
           percentageBar={this.percentageBar}
         />
       </div>
