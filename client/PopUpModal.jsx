@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
+// import Ratings from './Ratings';
 import Modal from 'react-modal';
 import {Button} from 'react-bootstrap';
+
 
 Modal.setAppElement(document.getElementById('app'));
 
@@ -16,8 +18,17 @@ const PopUpModal = (props) => {
       <Modal
         className='modal'
         isOpen={show} onHide={toggleShow}>
-        <h1>We made it</h1>
-        <Button onClick={toggleShow}>close</Button>
+        <div className='module-box'>
+          <div className='x-button'
+            onClick={toggleShow}><small>X</small></div>
+          <div className='left-side-modal'>
+            <h1> 🧸 {props.ratings.average} ({props.reviews.length} reviews)</h1>
+            {/* <Ratings /> */}
+          </div>
+          <div className='right-side-modal'>
+
+          </div>
+        </div>
       </Modal>
     </>
   );
