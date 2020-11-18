@@ -6,13 +6,13 @@ USE beartnt_reviews;
 
 CREATE TABLE ratings(
   ratings_id INT NOT NULL AUTO_INCREMENT,
-  average DECIMAL,
-  cleanliness DECIMAL,
-  communication DECIMAL,
-  checkin DECIMAL,
-  accuracy DECIMAL,
-  location DECIMAL,
-  value DECIMAL,
+  average FLOAT,
+  cleanliness FLOAT,
+  communication FLOAT,
+  checkin FLOAT,
+  accuracy FLOAT,
+  location FLOAT,
+  value FLOAT,
   PRIMARY KEY (ratings_id)
 );
 

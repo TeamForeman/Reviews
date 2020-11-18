@@ -10,8 +10,9 @@ con.connect(err => {
   err ? console.error(err) : console.log('Connected to the database!!');
 });
 
-const getAllDataFromTable = (table, callback) => {
-  var query = `SELECT * FROM ${table} WHERE ratings_id = 3`;
+const getAllDataFromTable = (table, id, callback) => {
+  id = id || 5;
+  var query = `SELECT * FROM ${table} WHERE ratings_id = ${id}`;
   con.query(query, (err, res) => {
     err ? callback(err) : callback(null, res);
   });

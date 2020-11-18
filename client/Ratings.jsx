@@ -9,7 +9,6 @@ const Ratings = (props) => {
       borderRadius: '15px'
     };
     styles.width = (score / 5 * 100) + '%';
-    console.log('here?', styles);
     return styles;
   };
 
