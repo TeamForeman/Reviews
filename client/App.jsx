@@ -11,12 +11,15 @@ class App extends React.Component {
       ratings: [],
       reviews: []
     };
+    this.percentageBar = this.percentageBar.bind(this);
   }
   componentDidMount () {
     console.log('location:', window.location);
     var id = window.location.pathname.split('/');
     id = id[id.length - 1];
-
+    if (id.length === 0) {
+      id = 67;
+    }
     axios.get(`/beartnt/reviews/${id}`)
       .then(data => {
         console.log('reviews', data.data);
@@ -34,15 +37,35 @@ class App extends React.Component {
       .catch(err => {
         console.log(err);
       });
+
+  }
+  percentageBar (score) {
+    var styles = {
+      height: '5px',
+      backgroundColor: 'black',
+      borderRadius: '15px'
+    };
+    styles.width = (score / 5 * 100) + '%';
+    return styles;
   }
 
   render () {
     return (
       <div className='full-body'>
         <div>Reviews</div>
-        <Ratings rate={this.state.ratings} numOfReviews={this.state.reviews.length}/>
-        <AllReviews reviews={this.state.reviews}/>
-        <PopUpModal reviews={this.state.reviews} ratings={this.state.ratings}/>
+        <Ratings
+          ratings={this.state.ratings}
+          numOfReviews={this.state.reviews.length}
+          percentageBar={this.percentageBar}
+        />
+        <AllReviews
+          reviews={this.state.reviews}
+        />
+        <PopUpModal
+          reviews={this.state.reviews}
+          ratings={this.state.ratings}
+          percentageBar={this.percentageBar}
+        />
       </div>
     );
   }

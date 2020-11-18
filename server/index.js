@@ -5,8 +5,6 @@ const path = require('path');
 const app = express();
 const port = 3006;
 
-var listingId;
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -29,12 +27,6 @@ app.get('/beartnt/ratings/:id', (req, res) => {
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
-
-// app.get(/beartnt/, (req, res) => {
-//   console.log('second get', req.params);
-//   res.sendFile(path.join(__dirname, '../public/'));
-// });
-
 
 
 app.listen(port, () =>{
