@@ -55,6 +55,9 @@ describe('Testing the rendering of each react element', () => {
     numOfReviews: 4,
     percentageBar: (item) => {
       return item;
+    },
+    readMore: (item) => {
+      return item;
     }
   };
 
@@ -85,6 +88,7 @@ describe('Testing the rendering of each react element', () => {
     expect(shallow(
       <SingleReview
         review={props.review}
+        readMore={props.readMore}
         props={props}
 
       />).contains(<p hidden>test</p>)).toBe(true);
@@ -94,6 +98,7 @@ describe('Testing the rendering of each react element', () => {
     expect(shallow(
       <AllReviews
         reviews={props.reviews}
+        readMore={props.readMore}
         props={props}
 
       />).contains(<p hidden>test</p>)).toBe(true);

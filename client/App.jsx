@@ -12,6 +12,7 @@ class App extends React.Component {
       reviews: []
     };
     this.percentageBar = this.percentageBar.bind(this);
+    this.readMore = this.readMore.bind(this);
   }
   componentDidMount () {
     var id = window.location.pathname.split('/');
@@ -36,8 +37,14 @@ class App extends React.Component {
       .catch(err => {
         console.log(err);
       });
-
   }
+
+  readMore (string) {
+    var position = 100;
+    var newString = [string.slice(0, position), string.slice(position)];
+    return newString;
+  }
+
   percentageBar (score) {
     var styles = {
       height: '5px',
@@ -59,6 +66,7 @@ class App extends React.Component {
             percentageBar={this.percentageBar}
           />
           <AllReviews
+            readMore={this.readMore}
             reviews={this.state.reviews}
           />
           <PopUpModal

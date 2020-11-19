@@ -108,6 +108,11 @@ img {
 .review-paragraph {
   padding-right: 20px;
 }
+
+.read-more {
+  font-weight: bold;
+  text-decoration: underline;
+}
 /*
 =========================================
     Button
