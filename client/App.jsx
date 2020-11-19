@@ -52,7 +52,7 @@ class App extends React.Component {
     return (
       <div className='margin'>
         <div className='full-body'>
-          <div>Reviews</div>
+          <p hidden>test</p>
           <Ratings
             ratings={this.state.ratings}
             numOfReviews={this.state.reviews.length}

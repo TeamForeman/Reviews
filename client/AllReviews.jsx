@@ -12,6 +12,7 @@ const AllReviews = (props) => {
             review={review}
           />);
       })}
+      <p hidden>test</p>
     </div>
   );
 

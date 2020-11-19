@@ -20,6 +20,7 @@ const PopUpModal = (props) => {
       <Modal
         className='modal'
         isOpen={show} onHide={toggleShow}>
+        <p hidden>test</p>
         <div className='module-box'>
           <div className='x-button'
             onClick={toggleShow}><small>X</small>

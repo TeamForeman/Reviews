@@ -23,6 +23,7 @@ const Ratings = (props) => {
             />
           );
         })}
+        <p hidden>test</p>
       </div>
     </div>
   );

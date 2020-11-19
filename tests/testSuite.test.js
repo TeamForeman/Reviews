@@ -5,6 +5,8 @@ import Ratings from '../client/Ratings.jsx';
 import IndividualRating from '../client/IndividualRating.jsx';
 import Adapter from 'enzyme-adapter-react-16';
 import AllReviews from '../client/AllReviews.jsx';
+import SingleReview from '../client/SingleReview.jsx';
+import PopUpModal from '../client/PopUpModal.jsx';
 
 
 // axios.defaults.baseURL = 'http://localhost:3002';
@@ -29,6 +31,14 @@ describe('Testing the rendering of each react element', () => {
         reviews_id: 224
       }
     ],
+    review: {
+      date: 'November 2017',
+      name: 'Crystal Fay',
+      profilePic: 'https://beartnt-profile-photos.s3.us-east-2.amazonaws.com/beartnt+profile+photos/pexels-photo-220453.jpeg',
+      ratings_id: 23,
+      reviewBody: 'In rem consequatur laudantium. Cumque aut ex minus eos consequatur nam vel eaque harum. Unde est cum debitis consequatur.',
+      reviews_id: 224
+    },
     ratings: {
       accuracy: 3.3,
       average: 2.5,
@@ -43,13 +53,14 @@ describe('Testing the rendering of each react element', () => {
       name: 'rating',
       score: '2.4'
     },
+    numOfReviews: 4,
     percentageBar: (item) => {
       return item;
     }
   };
 
   test('should render App', () => {
-    expect(shallow(<App />).contains(<div>Reviews</div>)).toBe(true);
+    expect(shallow(<App />).contains(<p hidden>test</p>)).toBe(true);
   });
 
   test('should render Ratings', () => {
@@ -59,7 +70,7 @@ describe('Testing the rendering of each react element', () => {
         percentageBar={props.percentageBar}
         props={props}
       />
-    ).contains(<h3 className='average'><span className='red-star'>★</span> {props.ratings.average}  ({props.numOfReviews} reviews)</h3>)).toBe(true);
+    ).contains(<p hidden>test</p>)).toBe(true);
   });
 
   test('should render IndividualRating', () => {
@@ -68,16 +79,37 @@ describe('Testing the rendering of each react element', () => {
         rating={props.rating}
         percentageBar={props.percentageBar}
         props={props}
-      />).contains(<div style={props.percentageBar(props.rating.score)}></div>)).toBe(true);
+      />).contains(<p hidden>test</p>)).toBe(true);
   });
 
-  xtest('should render AllReviews', () => {
+  test('should render SingleReview', () => {
+    expect(shallow(
+      <SingleReview
+        review={props.review}
+        props={props}
+
+      />).contains(<p hidden>test</p>)).toBe(true);
+  });
+
+  test('should render AllReviews', () => {
     expect(shallow(
       <AllReviews
         reviews={props.reviews}
         props={props}
 
-      />).contains(<div className='reviews-box'></div>)).toBe(true);
+      />).contains(<p hidden>test</p>)).toBe(true);
   });
+
+  test('should render PopUpModal', () => {
+    expect(shallow(
+      <PopUpModal
+        reviews={props.reviews}
+        ratings={props.ratings}
+        percentageBar={props.percentageBar}
+        numOfReviews={props.numOfReviews}
+        props={props}
+      />).contains(<p hidden>test</p>)).toBe(true);
+  });
+
 
 });

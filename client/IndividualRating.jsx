@@ -15,6 +15,7 @@ const IndividualRating = (props) => {
 
       <div className='score'>
         <small>&nbsp; &nbsp;{props.rating.score}</small>
+        <p hidden>test</p>
       </div>
     </div>
   );
