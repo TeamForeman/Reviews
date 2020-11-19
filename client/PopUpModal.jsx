@@ -24,18 +24,19 @@ const PopUpModal = (props) => {
           <div className='x-button'
             onClick={toggleShow}><small>X</small>
           </div>
-          <div className='module-right-left'>
-            <div className='modal-side'>
-              <div className='left-side-modal'>
-                <Ratings
-                  ratings={props.ratings}
-                  numOfReviews={props.reviews.length}
-                  percentageBar={props.percentageBar}
-                />
-              </div>
+
+          <div className='modal-inside-flex'>
+
+            <div className='left-side-modal'>
+              <Ratings
+                ratings={props.ratings}
+                numOfReviews={props.reviews.length}
+                percentageBar={props.percentageBar}
+              />
             </div>
-            <div className='modal-side'>
-              <div className='right-side-modal'>
+
+            <div className='right-side-modal'>
+              <div className='inner-right'>
                 <label>🔍</label>
                 <input></input><br></br><br></br>
                 <AllReviews
@@ -43,6 +44,7 @@ const PopUpModal = (props) => {
                 />
               </div>
             </div>
+
           </div>
         </div>
       </Modal>

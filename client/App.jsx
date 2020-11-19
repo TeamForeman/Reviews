@@ -51,22 +51,24 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className='full-body'>
-        <div>Reviews</div>
-        <Ratings
-          ratings={this.state.ratings}
-          numOfReviews={this.state.reviews.length}
-          percentageBar={this.percentageBar}
-        />
-        <AllReviews
-          reviews={this.state.reviews}
-        />
-        <PopUpModal
-          reviews={this.state.reviews}
-          ratings={this.state.ratings}
-          numOfReviews={this.state.reviews.length}
-          percentageBar={this.percentageBar}
-        />
+      <div className='margin'>
+        <div className='full-body'>
+          <div>Reviews</div>
+          <Ratings
+            ratings={this.state.ratings}
+            numOfReviews={this.state.reviews.length}
+            percentageBar={this.percentageBar}
+          />
+          <AllReviews
+            reviews={this.state.reviews}
+          />
+          <PopUpModal
+            reviews={this.state.reviews}
+            ratings={this.state.ratings}
+            numOfReviews={this.state.reviews.length}
+            percentageBar={this.percentageBar}
+          />
+        </div>
       </div>
     );
   }
