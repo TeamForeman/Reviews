@@ -37,8 +37,8 @@ const PopUpModal = (props) => {
 
             <div className='right-side-modal'>
               <div className='inner-right'>
-                <label>🔍</label>
-                <input></input><br></br><br></br>
+                <label></label>
+                <input value='🔍  Search reviews'></input><br></br><br></br>
                 <AllReviews
                   reviews={props.reviews}
                 />
