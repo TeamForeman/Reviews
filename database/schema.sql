@@ -16,6 +16,7 @@ CREATE TABLE ratings(
   PRIMARY KEY (ratings_id)
 );
 
+
 CREATE TABLE reviews (
   reviews_id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(30),

@@ -3,40 +3,65 @@
     Full body
 =========================================
  */
+ body {
+  font-family: 'Roboto', sans-serif;
+ }
 
+.margin {
+  margin: 100px;
+}
 .full-body {
-  margin-left: 100px;
+  max-width: 1300px;
+  margin: auto;
 }
 
 /*
 =========================================
-    Ratings
+    RATINGS
 =========================================
  */
 
-.rating {
-  padding: 10px 0;
-}
-
-.score {
-  padding-left: 10px;
-}
-
 .ratings-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/*
+    INDIVIDUAL RATING
+ */
+.individual-ratings-box {
   display: grid;
-  grid-template-columns: 20% 20% 10% 20% 20% 10%;
+  grid-template-columns: 35% 45% 20%;
   grid-template-rows: auto;
+  flex-basis: 50%;
+  flex-grow: 1;
+  min-width: 400px;
+  max-width: 100%;
+  padding-bottom: 20px;
+}
+
+.rating-label {
+  text-transform: capitalize;
 }
 
 .base-layer {
-  height: 7px;
-  background-color: grey;
+  height: 5px;
+  background-color: rgba(128, 128, 128, 0.31);
   border-radius: 15px;
   width: 100%;
 }
 
 .score-bar {
+  max-width: 250px;
   margin-top: 6px;
+}
+.score {
+  padding-left: 10px;
+}
+
+.red-star {
+  color: red;
 }
 
 /*
@@ -44,25 +69,35 @@
     Reviews
 =========================================
  */
+
 .reviews-box {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
-.review {
-  display: block;
-  width: 600px;
+/*
+  SINGLE REVIEW
+*/
+
+.individual-review-box {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  max-width: 100%;
+  min-width: 450px;
+  flex-basis: 50%;
+  flex-grow: 1;
+  padding-bottom: 20px;
 }
 
-.pic-name-date {
+.review-pic-name-date-box {
   display: grid;
   grid-template-columns: 80px 200px;
   grid-template-rows: auto;
   width: 100%;
 }
 
-.name-date {
+.review-name-date-box {
   line-height: 30%;
 }
 
@@ -70,8 +105,75 @@ img {
   border-radius: 50%;
 }
 
-.review-body {
-  height: 100px;
-  padding: 10px;
+.review-paragraph {
+  padding-right: 20px;
+}
+/*
+=========================================
+    Button
+=========================================
+ */
+
+ button {
+   padding: 20px;
+   border-radius: 10px;
+   font-weight: bold;
+   outline: none;
+   background: none;
+   border: gray solid 1px;
+ }
+
+/*
+=========================================
+    Pop Up Modal
+=========================================
+ */
+
+.modal {
+  margin: 25px auto;
+  outline: none;
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 90%;
+
+  background-position: center;
+  background-color: white;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  overflow: auto;
 }
 
+.x-button {
+  color: black;
+  font-weight: 300;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.module-box {
+  padding: 25px;
+}
+
+.modal-inside-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.left-side-modal {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.right-side-modal {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+input {
+  width: 90%;
+  border-radius: 30px;
+  padding: 15px;
+  outline: none;
+  background-color: rgba(233, 220, 220, 0.098);
+  border: 1px solid grey;
+}
