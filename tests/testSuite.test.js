@@ -1,17 +1,16 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
 import App from '../client/App.jsx';
 import Ratings from '../client/Ratings.jsx';
 import IndividualRating from '../client/IndividualRating.jsx';
-import Adapter from 'enzyme-adapter-react-16';
 import AllReviews from '../client/AllReviews.jsx';
 import SingleReview from '../client/SingleReview.jsx';
 import PopUpModal from '../client/PopUpModal.jsx';
 
-
-// axios.defaults.baseURL = 'http://localhost:3002';
-
 describe('Testing the rendering of each react element', () => {
+  //DUMMY DATA
   var props = {
     reviews: [
       {
