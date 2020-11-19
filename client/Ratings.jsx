@@ -16,7 +16,11 @@ const Ratings = (props) => {
       <div className='ratings-box'>
         {arrOfRatings.map(rating => {
           return (
-            <IndividualRating rating={rating} percentageBar={props.percentageBar} />
+            <IndividualRating
+              key={rating}
+              rating={rating}
+              percentageBar={props.percentageBar}
+            />
           );
         })}
       </div>

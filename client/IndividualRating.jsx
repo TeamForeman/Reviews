@@ -10,6 +10,7 @@ const IndividualRating = (props) => {
         <div className='base-layer'>
           <div style={props.percentageBar(props.rating.score)}></div>
         </div>
+        <div></div>
       </div>
 
       <div className='score'>

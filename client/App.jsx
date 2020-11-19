@@ -14,7 +14,6 @@ class App extends React.Component {
     this.percentageBar = this.percentageBar.bind(this);
   }
   componentDidMount () {
-    console.log('location:', window.location);
     var id = window.location.pathname.split('/');
     id = id[id.length - 1];
     if (id.length === 0) {
