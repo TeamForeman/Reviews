@@ -11,3 +11,8 @@ test('should render reviews', () => {
   expect(shallow(<App />).contains(<div>Reviews</div>)).toBe(true);
 
 });
+
+test('should render reviews', () => {
+  expect(shallow(<IndividalRatings />).contains(<div>Reviews</div>)).toBe(true);
+
+});
