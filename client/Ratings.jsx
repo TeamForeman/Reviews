@@ -1,14 +1,25 @@
 import React from 'react';
+import IndividualRating from './IndividualRating.jsx';
 
 
 const Ratings = (props) => {
+  var arrOfRatings = [];
+  for ( var key in props.ratings) {
+    if (key !== 'ratings_id' && key !== 'average') {
+      arrOfRatings.push({name: key, score: props.ratings[key]});
+    }
+  }
 
   return (
     <div>
       <h3 className='average'>🧸 {props.ratings.average}  ({props.numOfReviews} reviews)</h3>
       <div className='ratings-box'>
-        <div className='rating'>Cleanliness:</div>
-
+        {arrOfRatings.map(rating => {
+          return (
+            <IndividualRating rating={rating} percentageBar={props.percentageBar} />
+          );
+        })}
+        {/* <div className='rating'>Cleanliness:</div>
         <div className='rating score-bar'>
           <div className='base-layer'>
             <div style={props.percentageBar(props.ratings.cleanliness)}></div>
@@ -76,7 +87,7 @@ const Ratings = (props) => {
 
         <div className='rating score'>
           <small>&nbsp; &nbsp;{props.ratings.value}</small>
-        </div>
+        </div> */}
 
       </div>
     </div>

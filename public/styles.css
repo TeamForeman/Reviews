@@ -10,23 +10,31 @@
 
 /*
 =========================================
-    Ratings
+    RATINGS
 =========================================
  */
 
-.rating {
-  padding: 10px 0;
-}
-
-.score {
-  padding-left: 10px;
-}
-
 .ratings-box {
-  display: grid;
-  grid-template-columns: 20% 20% 10% 20% 20% 10%;
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+}
+
+/*
+    INDIVIDUAL RATING
+ */
+.individual-ratings-box {
+  display: grid;
+  grid-template-columns: 35% 45% 20%;
+  grid-template-rows: auto;
+  width: 50%;
+  min-width: 400px;
+  padding-bottom: 20px;
+  /* padding-right: 20px; */
+}
+
+.rating-label {
+  text-transform: capitalize;
 }
 
 .base-layer {
@@ -37,8 +45,18 @@
 }
 
 .score-bar {
+  max-width: 250px;
   margin-top: 6px;
 }
+.score {
+  padding-left: 10px;
+}
+
+
+
+
+
+
 
 /*
 =========================================
@@ -51,19 +69,19 @@
   flex-wrap: wrap;
 }
 
-.review {
+.individual-review-box {
   display: block;
   width: 600px;
 }
 
-.pic-name-date {
+.review-pic-name-date-box {
   display: grid;
   grid-template-columns: 80px 200px;
   grid-template-rows: auto;
   width: 100%;
 }
 
-.name-date {
+.review-name-date-box {
   line-height: 30%;
 }
 
@@ -71,7 +89,7 @@ img {
   border-radius: 50%;
 }
 
-.review-body {
+.review-paragraph {
   height: 100px;
   padding: 10px;
 }
