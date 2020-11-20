@@ -38,10 +38,20 @@ const PopUpModal = (props) => {
 
             <div className='right-side-modal'>
               <div className='inner-right'>
-                <label></label>
-                <input value='🔍  Search reviews'></input><br></br><br></br>
+                <div className='input-form'>
+                  <label>
+                    🔍
+                    <input
+                      type='text'
+                      onChange={props.handleChange}
+                      onKeyDown={props.search}
+                    ></input>
+                  </label>
+                </div>
+                <br></br><br></br>
                 <AllReviews
                   reviews={props.reviews}
+                  readMore={props.readMore}
                 />
               </div>
             </div>

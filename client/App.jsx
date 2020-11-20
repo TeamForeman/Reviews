@@ -9,10 +9,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       ratings: [],
-      reviews: []
+      reviews: [],
+      modalReviews: [],
+      searchBar: ''
     };
     this.percentageBar = this.percentageBar.bind(this);
     this.readMore = this.readMore.bind(this);
+    this.search = this.search.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount () {
     var id = window.location.pathname.split('/');
@@ -24,7 +28,8 @@ class App extends React.Component {
       .then(data => {
         console.log('reviews', data.data);
         this.setState({
-          reviews: data.data
+          reviews: data.data,
+          modalReviews: data.data
         });
         return axios.get(`/beartnt/ratings/${id}`);
       })
@@ -55,6 +60,38 @@ class App extends React.Component {
     return styles;
   }
 
+  handleChange (e) {
+    this.setState({
+      searchBar: e.target.value
+    });
+  }
+
+  resetSearch () {
+    this.setState({
+      modalReviews: this.state.reviews
+    });
+  }
+
+  search (e) {
+    if (e.key === 'Enter') {
+      var newProps = [];
+      this.state.reviews.map(prop => {
+        if (prop.reviewBody.includes(this.state.searchBar)) {
+          newProps.push(prop);
+        }
+      });
+      // if (newProps.length === 0) {
+      //   this.setState({
+      //     modalReviews: [{reviewBody: `There are no results for ${this.state.searchBar}`, profilePic: null}]
+      //   });
+      // } else {
+      this.setState({
+        modalReviews: newProps
+      });
+      // }
+    }
+  }
+
   render () {
     return (
       <div className='margin'>
@@ -70,9 +107,12 @@ class App extends React.Component {
             reviews={this.state.reviews}
           />
           <PopUpModal
-            reviews={this.state.reviews}
+            reviews={this.state.modalReviews}
             ratings={this.state.ratings}
             numOfReviews={this.state.reviews.length}
+            handleChange={this.handleChange}
+            search={this.search}
+            readMore={this.readMore}
             percentageBar={this.percentageBar}
           />
         </div>
