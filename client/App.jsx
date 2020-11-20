@@ -3,6 +3,7 @@ import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import AllReviews from './AllReviews.jsx';
 import PopUpModal from './PopUpModal.jsx';
+import css from './styles.css';
 
 class App extends React.Component {
   constructor(props) {

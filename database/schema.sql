@@ -29,14 +29,6 @@ CREATE TABLE reviews (
     REFERENCES ratings(ratings_id)
 );
 
--- SAMPLE DATA
--- LOAD DATA INFILE ''
--- INTO TABLE table_name
--- FIELDS TERMINATED BY ','
--- ENCLOSED BY '"'
--- LINES TERMINATED BY '/n'
--- IGNORE 1 ROWS;
-
 -- INSERT INTO ratings (cleanliness, communication, checkin, accuracy, location, value) VALUES (4.4, 3.6, 2.4, 5.0, 3.4, 2.2);
 -- INSERT INTO reviews (name, date, reviewBody, profilePic, ratings_id) VALUES ('sally', 'OCT 2020', 'It was sooo good', 'url.com', 1);
 -- INSERT INTO reviews (name, date, reviewBody, profilePic, ratings_id) VALUES ('jim', 'OCT 2020', 'It was ok', 'url.com', 1);
