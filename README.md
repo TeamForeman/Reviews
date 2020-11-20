@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Mormont-team-6/photo-carousel
+  - https://github.com/Mormont-team-6/Reservation-Service
+  - https://github.com/Mormont-team-6/places-to-stay
+  - https://github.com/Mormont-team-6/Customer-Reviews-Proxy
 
 ## Table of Contents
 

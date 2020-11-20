@@ -108,6 +108,13 @@ img {
 .review-paragraph {
   padding-right: 20px;
 }
+
+.read-more {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  display: inline;
+}
 /*
 =========================================
     Button
@@ -141,7 +148,7 @@ img {
   background-color: white;
   box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
   border-radius: 10px;
-  overflow: auto;
+  overflow: auto;/*////////////////////////*/
 }
 
 .x-button {
@@ -151,13 +158,17 @@ img {
 }
 
 .module-box {
-  padding: 25px;
+  padding: 25px 0 25px 25px;
 }
 
 .modal-inside-flex {
+  /* box-sizing: border-box;
+  border: 1px solid rgb(128, 128, 128); */
+  max-height: 50%;
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 0;
+  overflow-y: auto;
 }
 
 .left-side-modal {
@@ -169,11 +180,28 @@ img {
   flex-basis: 50%;
   flex-grow: 1;
 }
-input {
+
+/* .inner-right {
+  overflow-y: auto;
+  min-height: 300px;
+  max-height: 600px;
+} */
+
+.input-form {
   width: 90%;
   border-radius: 30px;
-  padding: 15px;
-  outline: none;
+  padding: 7px;
   background-color: rgba(233, 220, 220, 0.098);
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.66);
 }
+input {
+  width: 90%;
+  outline: none;
+  margin-left: 10px;
+  border: none;
+  background-color: rgba(233, 220, 220, 0);
+}
+.input-form:focus-within {
+  border: 2px solid rgba(128, 128, 128, 1);
+}
+
