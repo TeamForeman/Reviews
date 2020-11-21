@@ -126,9 +126,9 @@
 }
 
 /*
-=========================================
+-----------------------
     Button
-=========================================
+-----------------------
  */
 
 .btn-see-all-reviews {
@@ -192,14 +192,16 @@
   flex-grow: 1;
 }
 
-/* .inner-right {
-  overflow-y: auto;
+.inner-right-reviews {
+  /* overflow-y: auto;
   min-height: 300px;
-  max-height: 600px;
-} */
+  max-height: 600px; */
+}
 
 /*
+-----------------------
   INPUT BAR
+-----------------------
 */
 
 .input-form-reviews {
@@ -209,14 +211,16 @@
   background-color: rgba(233, 220, 220, 0.098);
   border: 1px solid rgba(128, 128, 128, 0.66);
 }
+
+.input-form-reviews:focus-within {
+  border: 2px solid rgba(128, 128, 128, 1);
+}
+
 .input-search-reviews{
   width: 90%;
   outline: none;
   margin-left: 10px;
   border: none;
   background-color: rgba(233, 220, 220, 0);
-}
-.input-form-reviews:focus-within {
-  border: 2px solid rgba(128, 128, 128, 1);
 }
 
