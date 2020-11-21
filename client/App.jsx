@@ -25,14 +25,14 @@ class App extends React.Component {
     if (id.length === 0) {
       id = 67;
     }
-    axios.get(`/beartnt/reviews/${id}`)
+    axios.get(`/api/reviews-module/reviews/${id}`)
       .then(data => {
         console.log('reviews', data.data);
         this.setState({
           reviews: data.data,
           modalReviews: data.data
         });
-        return axios.get(`/beartnt/ratings/${id}`);
+        return axios.get(`/api/reviews-module/ratings/${id}`);
       })
       .then(data => {
         console.log('ratings', data.data);
@@ -95,8 +95,8 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className='margin-body'>
-        <div className='full-body'>
+      <div className='reviews-margin-body'>
+        <div className='reviews-full-body'>
           <p hidden>test</p>
           <Ratings
             ratings={this.state.ratings}

@@ -1,14 +1,14 @@
 /*
 =========================================
-    Full body
+    App
 =========================================
  */
 
-.margin-body {
+.reviews-margin-body {
   font-family: 'Roboto', sans-serif;
   margin: 100px;
 }
-.full-body {
+.reviews-full-body {
   max-width: 1300px;
   margin: auto;
 }
@@ -19,14 +19,25 @@
 =========================================
  */
 
+.reviews-average {
+
+}
+
+.reviews-red-star {
+  color: red;
+}
+
 .ratings-box {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
+
 /*
+=========================================
     INDIVIDUAL RATING
+=========================================
  */
 
 .individual-ratings-box {
@@ -40,32 +51,29 @@
   padding-bottom: 20px;
 }
 
-.rating-label {
+.individual-rating-label {
   text-transform: capitalize;
 }
 
-.base-layer {
+.individual-score-bar {
+  max-width: 250px;
+  margin-top: 6px;
+}
+
+.individual-base-layer {
   height: 5px;
   background-color: rgba(128, 128, 128, 0.31);
   border-radius: 15px;
   width: 100%;
 }
 
-.score-bar {
-  max-width: 250px;
-  margin-top: 6px;
-}
-.score {
+.individual-score {
   padding-left: 10px;
-}
-
-.red-star {
-  color: red;
 }
 
 /*
 =========================================
-    Reviews
+    AllReviews
 =========================================
  */
 
@@ -75,10 +83,12 @@
 }
 
 /*
+=========================================
   SINGLE REVIEW
+=========================================
 */
 
-.individual-review-box {
+.single-review-box {
   display: grid;
   grid-auto-columns: auto;
   grid-auto-rows: auto;
@@ -108,7 +118,7 @@
   padding-right: 20px;
 }
 
-.read-more {
+.read-more-btn {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: bold;
   text-decoration: underline;
@@ -151,15 +161,16 @@
   overflow: auto;/*////////////////////////*/
 }
 
+.reviews-module-box {
+  padding: 25px 0 25px 25px;
+}
+
 .x-button-reviews {
   color: black;
   font-weight: 300;
   font-family: 'Helvetica', sans-serif;
 }
 
-.module-box {
-  padding: 25px 0 25px 25px;
-}
 
 .modal-inside-flex {
   /* box-sizing: border-box;
@@ -171,12 +182,12 @@
   overflow-y: auto;
 }
 
-.left-side-modal {
+.left-side-modal-reviews {
   flex-basis: 50%;
   flex-grow: 1;
 }
 
-.right-side-modal {
+.right-side-modal-reviews {
   flex-basis: 50%;
   flex-grow: 1;
 }

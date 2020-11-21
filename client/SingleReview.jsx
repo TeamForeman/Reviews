@@ -5,7 +5,7 @@ const SingleReview = (props) => {
   const toggleShow = () => setShow(!show);
 
   return (
-    <div className='individual-review-box'>
+    <div className='single-review-box'>
       <div className='review-pic-name-date-box'>
         <span className='profile-picture'>
           <a href={props.review.profilePic}>
@@ -22,7 +22,7 @@ const SingleReview = (props) => {
         {props.readMore(props.review.reviewBody)[0]}
         {!show &&
           <span>...
-            <span className="read-more" onClick={toggleShow}>read more</span>
+            <span className="read-more-btn" onClick={toggleShow}>read more</span>
           </span>
         }
         {show &&
