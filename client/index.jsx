@@ -7,7 +7,7 @@ import PopUpModal from './PopUpModal.jsx';
 
 
 if (document.getElementById('app')) {
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
 } else {
-  ReactDOM.render(<App/>, document.getElementById('service3'));
+  ReactDOM.render(<App />, document.getElementById('service3'));
 }
