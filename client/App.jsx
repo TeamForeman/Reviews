@@ -95,7 +95,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className='margin'>
+      <div className='margin-body'>
         <div className='full-body'>
           <p hidden>test</p>
           <Ratings

@@ -10,7 +10,7 @@ const SingleReview = (props) => {
         <span className='profile-picture'>
           <a href={props.review.profilePic}>
             <p hidden>test</p>
-            <img alt='profile-pic' src={props.review.profilePic} width='60px' height='60px'></img>
+            <img className='profile-picture-shape' alt='profile-pic' src={props.review.profilePic} width='60px' height='60px'></img>
           </a>
         </span>
         <span className='review-name-date-box'>

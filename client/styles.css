@@ -3,11 +3,9 @@
     Full body
 =========================================
  */
- body {
-  font-family: 'Roboto', sans-serif;
- }
 
-.margin {
+.margin-body {
+  font-family: 'Roboto', sans-serif;
   margin: 100px;
 }
 .full-body {
@@ -30,6 +28,7 @@
 /*
     INDIVIDUAL RATING
  */
+
 .individual-ratings-box {
   display: grid;
   grid-template-columns: 35% 45% 20%;
@@ -101,7 +100,7 @@
   line-height: 30%;
 }
 
-img {
+.profile-picture-shape {
   border-radius: 50%;
 }
 
@@ -115,20 +114,21 @@ img {
   text-decoration: underline;
   display: inline;
 }
+
 /*
 =========================================
     Button
 =========================================
  */
 
- button {
-   padding: 20px;
-   border-radius: 10px;
-   font-weight: bold;
-   outline: none;
-   background: none;
-   border: gray solid 1px;
- }
+.btn-see-all-reviews {
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  outline: none;
+  background: none;
+  border: gray solid 1px;
+}
 
 /*
 =========================================
@@ -136,7 +136,7 @@ img {
 =========================================
  */
 
-.modal {
+.modal-for-reviews {
   margin: 25px auto;
   outline: none;
   width: 90%;
@@ -151,7 +151,7 @@ img {
   overflow: auto;/*////////////////////////*/
 }
 
-.x-button {
+.x-button-reviews {
   color: black;
   font-weight: 300;
   font-family: 'Helvetica', sans-serif;
@@ -187,21 +187,25 @@ img {
   max-height: 600px;
 } */
 
-.input-form {
+/*
+  INPUT BAR
+*/
+
+.input-form-reviews {
   width: 90%;
   border-radius: 30px;
   padding: 7px;
   background-color: rgba(233, 220, 220, 0.098);
   border: 1px solid rgba(128, 128, 128, 0.66);
 }
-input {
+.input-search-reviews{
   width: 90%;
   outline: none;
   margin-left: 10px;
   border: none;
   background-color: rgba(233, 220, 220, 0);
 }
-.input-form:focus-within {
+.input-form-reviews:focus-within {
   border: 2px solid rgba(128, 128, 128, 1);
 }
 
