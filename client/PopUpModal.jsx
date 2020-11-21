@@ -15,20 +15,20 @@ const PopUpModal = (props) => {
 
   return (
     <>
-      <button onClick={toggleShow}>See all {props.reviews.length} reviews</button>
+      <button className='btn-see-all-reviews' onClick={toggleShow}>See all {props.reviews.length} reviews</button>
 
       <Modal
-        className='modal'
+        className='modal-for-reviews'
         isOpen={show} onHide={toggleShow}>
         <p hidden>test</p>
-        <div className='module-box'>
-          <div className='x-button'
+        <div className='reviews-module-box'>
+          <div className='x-button-reviews'
             onClick={toggleShow}><small>X</small>
           </div>
 
           <div className='modal-inside-flex'>
 
-            <div className='left-side-modal'>
+            <div className='left-side-modal-reviews'>
               <Ratings
                 ratings={props.ratings}
                 numOfReviews={props.reviews.length}
@@ -36,12 +36,13 @@ const PopUpModal = (props) => {
               />
             </div>
 
-            <div className='right-side-modal'>
+            <div className='right-side-modal-reviews'>
               <div className='inner-right'>
-                <div className='input-form'>
+                <div className='input-form-reviews'>
                   <label>
                     🔍
                     <input
+                      className='input-search-reviews'
                       type='text'
                       onChange={props.handleChange}
                       onKeyDown={props.search}

@@ -4,16 +4,16 @@ const IndividualRating = (props) => {
 
   return (
     <div className='individual-ratings-box'>
-      <div className='rating-label'>{props.rating.name}:
+      <div className='individual-rating-label'>{props.rating.name}:
       </div>
-      <div className='score-bar'>
-        <div className='base-layer'>
+      <div className='individual-score-bar'>
+        <div className='individual-base-layer'>
           <div style={props.percentageBar(props.rating.score)}></div>
         </div>
         <div></div>
       </div>
 
-      <div className='score'>
+      <div className='individual-score'>
         <small>&nbsp; &nbsp;{props.rating.score}</small>
         <p hidden>test</p>
       </div>

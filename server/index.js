@@ -11,14 +11,14 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, '../public')));
 
 
-app.get('/beartnt/reviews/:id', (req, res) => {
+app.get('/api/reviews-module/reviews/:id', (req, res) => {
   db.getAllDataFromTable('reviews', req.params.id, (err, results) => {
     err ? console.log(err) : res.send(results);
   });
 });
 
 
-app.get('/beartnt/ratings/:id', (req, res) => {
+app.get('/api/reviews-module/ratings/:id', (req, res) => {
   db.getAllDataFromTable('ratings', req.params.id, (err, results) => {
     err ? console.log(err) : res.send(results);
   });
