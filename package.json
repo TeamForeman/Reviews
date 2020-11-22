@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack -d -watch",
     "start": "nodemon ./server/index.js",
-    "seed": "mysql.server start && mysql -u root < database/schema.sql && node ./database/seeder/fakeData.js",
+    "seed": "mysql -u root < database/schema.sql && node ./database/seeder/fakeData.js",
     "test": "jest"
   },
   "dependencies": {

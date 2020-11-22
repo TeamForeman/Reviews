@@ -6,7 +6,7 @@
 
 .reviews-margin-body {
   font-family: 'Roboto', sans-serif;
-  margin: 100px;
+  margin: 100px, 50px;
 }
 .reviews-full-body {
   max-width: 1300px;
