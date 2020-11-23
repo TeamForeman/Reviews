@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> Reviews module modeled after airbnb
 
 ## Related Projects
 
@@ -12,28 +12,47 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
 1. [Development](#development)
 
 ## Usage
 
-> Some usage instructions
+Startind node / nodemon
 
-## Requirements
+```sh
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+npm start
 
-- Node 6.13.0
-- etc
+npm run-script start:dev
+
+```
+
+Starting and stopping a pm2 instance
+
+```sh
+
+npm run-script start:pm2
+
+npm run-script end:pm2
+
+```
 
 ## Development
 
-### Installing Dependencies
+### Install Dependencies
 
 From within the root directory:
 
 ```sh
-npm install -g webpack
+
 npm install
+
 ```
+Webpack
+
+```sh
+
+npm run-script build
+
+```
+
 
