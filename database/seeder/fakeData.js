@@ -10,6 +10,18 @@ RANDOM GENERATORS
 -----------------------------------------
 */
 
+//ADDS .0 TO All WHOLE NUMBER RATINGS
+const addPointZero = (arrayOfNumbers) => {
+  newArray = [];
+  for (var num of arrayOfNumbers) {
+    if (num.toString().length === 1) {
+      num = num + '.0';
+    }
+    newArray.push(num);
+  }
+  return newArray;
+};
+
 //RANDOM NUMBER GENERATOR
 const randomNumberBetween = (min, max, oneDecimalPoint) => {
   if (oneDecimalPoint) {
@@ -65,15 +77,17 @@ const createAListing = () => {
   var r5 = randomNumberBetween(1, 5, true);
   var r6 = randomNumberBetween(1, 5, true);
   var av = Math.floor(((r1 + r2 + r3 + r4 + r5 + r6) * 10) / 6) / 10;
+  var ratingsArray = [av, r1, r2, r3, r4, r5, r6];
+  ratingsArray = addPointZero(ratingsArray);
 
   var ratings = {
-    average: av,
-    cleanliness: r1,
-    communication: r2,
-    checkin: r3,
-    accuracy: r4,
-    location: r5,
-    value: r6
+    average: ratingsArray[0],
+    cleanliness: ratingsArray[1],
+    communication: ratingsArray[2],
+    checkin: ratingsArray[3],
+    accuracy: ratingsArray[4],
+    location: ratingsArray[5],
+    value: ratingsArray[6]
   };
 
   // CREATES REVIEWS
