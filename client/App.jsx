@@ -105,7 +105,7 @@ class App extends React.Component {
           />
           <AllReviews
             readMore={this.readMore}
-            reviews={this.state.reviews}
+            reviews={this.state.reviews.slice(0, 4)}
           />
           <PopUpModal
             reviews={this.state.modalReviews}
