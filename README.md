@@ -30,9 +30,11 @@ Starting and stopping a pm2 instance
 
 ```sh
 
+sudo npm install pm2@latest -g
+
 npm run-script start:pm2
 
-npm run-script end:pm2
+npm run-script stop:pm2
 
 ```
 
