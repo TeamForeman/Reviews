@@ -23,7 +23,7 @@ const PopUpModal = (props) => {
         <p hidden>test</p>
         <div className='reviews-module-box'>
           <div className='x-button-reviews'
-            onClick={toggleShow}><small>X</small>
+            onClick={toggleShow}><small><i class="fas fa-times"></i></small>
           </div>
 
           <div className='modal-inside-flex'>
@@ -31,7 +31,7 @@ const PopUpModal = (props) => {
             <div className='left-side-modal-reviews'>
               <Ratings
                 ratings={props.ratings}
-                numOfReviews={props.reviews.length}
+                numOfReviews={props.numOfReviews}
                 percentageBar={props.percentageBar}
               />
             </div>
@@ -40,7 +40,7 @@ const PopUpModal = (props) => {
               <div className='inner-right-reviews'>
                 <div className='input-form-reviews'>
                   <label>
-                    🔍
+                    <i class="fas fa-search"></i>
                     <input
                       className='input-search-reviews'
                       type='text'

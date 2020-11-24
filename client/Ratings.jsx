@@ -12,7 +12,7 @@ const Ratings = (props) => {
 
   return (
     <div>
-      <h3 className='reviews-average'><span className='reviews-red-star'>★</span> {props.ratings.average}  ({props.numOfReviews} reviews)</h3>
+      <h2 className='reviews-average'><span className='reviews-red-star'><i className="fas fa-paw"></i></span> {props.ratings.average}  ({props.numOfReviews} reviews)</h2>
       <div className='ratings-box'>
         {arrOfRatings.map(rating => {
           return (
