@@ -42,7 +42,7 @@
 
 .individual-ratings-box {
   display: grid;
-  grid-template-columns: 35% 45% 20%;
+  grid-template-columns: 50% 30% 20%;
   grid-template-rows: auto;
   flex-basis: 50%;
   flex-grow: 1;
@@ -53,6 +53,7 @@
 
 .individual-rating-label {
   text-transform: capitalize;
+  font-weight: 300;
 }
 
 .individual-score-bar {
@@ -108,14 +109,25 @@
 
 .review-name-date-box {
   line-height: 30%;
+  padding-top: 3px;
 }
 
 .profile-picture-shape {
   border-radius: 50%;
 }
 
+.review-date {
+  font-weight: 200;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.review-name {
+  font-weight: 500;
+}
+
 .review-paragraph {
   padding-right: 20px;
+  font-weight: 300;
 }
 
 .read-more-btn {
@@ -139,6 +151,17 @@
   background: none;
   border: gray solid 1px;
 }
+
+.btn-see-all-reviews:active {
+  padding: 18px;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
+.btn-see-all-reviews:hover {
+  background-color: rgba(128, 128, 128, 0.041);
+}
+
 
 /*
 =========================================
@@ -210,6 +233,10 @@
 -----------------------
 */
 
+.input-form-height {
+  height: 40px;
+}
+
 .input-form-reviews {
   width: 90%;
   border-radius: 30px;
@@ -219,7 +246,7 @@
 }
 
 .input-form-reviews:focus-within {
-  border: 2px solid rgba(128, 128, 128, 1);
+  border: 3px solid rgba(128, 128, 128, 1);
 }
 
 .input-search-reviews{
