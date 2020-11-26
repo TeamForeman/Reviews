@@ -4,18 +4,23 @@ const SingleReview = (props) => {
   const [show, setShow] = useState(false);
   const toggleShow = () => setShow(!show);
 
+  var imageStyle = {
+    background: `url(${props.review.profilePic})`,
+    borderRadius: '50%',
+    width: '60px',
+    height: '60px'
+  };
+
   return (
     <div className='single-review-box'>
       <div className='review-pic-name-date-box'>
         <span className='profile-picture'>
-          <a href={props.review.profilePic}>
-            <p hidden>test</p>
-            <img className='profile-picture-shape' alt='profile-pic' src={props.review.profilePic} width='60px' height='60px'></img>
-          </a>
+          <p hidden>test</p>
+          <img className='profile-picture-shape' alt='profile-pic' src={props.review.profilePic} width='60px' height='60px'></img>
         </span>
         <span className='review-name-date-box'>
-          <p>{props.review.name}</p>
-          <p>{props.review.date}</p>
+          <p className='review-name'>{props.review.name}</p>
+          <p className='review-date'>{props.review.date}</p>
         </span>
       </div>
       <p className='review-paragraph'>

@@ -33,10 +33,28 @@ const randomNumberBetween = (min, max, oneDecimalPoint) => {
   }
 };
 
-//SHUFFLES PHOTOS LIST
-const photoShuffle = (pics) => {
-  var newOrder = pics.sort(() => Math.random() - 0.5);
+//SHUFFLES LISTS
+const listShuffle = (arr) => {
+  var newOrder = arr.sort(() => Math.random() - 0.5);
   return newOrder;
+};
+
+//RANDOM NAME GENERATOR
+const randomName = (arrOfNames) => {
+  randIndex = Math.floor(Math.random() * (arrOfNames.length - 1));
+  return arrOfNames[randIndex];
+};
+
+//RANDOM PARAGRAPH GENERATOR
+const randomParagraph = (listOfSentences) => {
+  var phrases = listShuffle(listOfSentences);
+  var length = Math.floor(Math.random() * (phrases.length - 1));
+  var paragraph = '';
+  while (length >= 0) {
+    paragraph = paragraph + ' ' + phrases[length];
+    length--;
+  }
+  return paragraph;
 };
 
 /*
@@ -44,6 +62,34 @@ const photoShuffle = (pics) => {
 CREATING ELEMENTS
 -----------------------------------------
 */
+
+var sentences = [
+  'This place is awesome!',
+  'I want my money back.',
+  'I wish I could have stayed longer.',
+  'The town was very cute.',
+  'Why didn\'t I find this place sooner?',
+  'I do not regret anything!',
+  'The owner has the best style.',
+  'The place smelled very bad!',
+  'The owner wouldn\'t let me bring my pet bear.',
+  'BEST TRIP EVER!',
+  'BE WARNED!',
+  'I came here for my honemoon.',
+  'It was quite a drive from the airport.',
+  'Very much worth it.',
+  'We had so much fun!',
+  'My partner and I always wanted to visit.',
+  'But seriously tell all your friends!',
+  'The torcher chamber was a bit too much.',
+  'But the owner was cool.',
+  'You can tell the owner really likes bears.',
+  'NO INDOOR PLUMBING!!',
+  'And I would do it again!',
+  'The view form the back porch was to die for.'
+];
+
+var names = ['Joe Buono', 'Zain Padela', 'Deb Johnson', 'Dylan Ring', 'Zach McCain', 'Alysa Shin', 'Rebecca Wiegel', 'Tre\' Moore', 'Henry Fradley', 'Connor Wilson', 'Christina Meador', 'Taylor Anderson', 'John Kelly', 'Frans Larson', 'Michael Wetterauer', 'Nick Mendini', 'Ben Rasmussen', 'Sam Goldie', 'Fabian Yee', 'Matthew Morgan', 'Alex Sandoval', 'Elene Mikaberidze', 'Michael Chen', 'John Campbell', 'David Kim', 'Giovani Maccagno', 'Quentin McMillian', 'Leah Cardon', 'Seth Lassen', 'Mukhtar Bahadory', 'Daniel Lee', 'John Anderton', 'Genaro Salinas', 'Derek Warner-Reyes', 'Mitch McDermott', 'Joe Wnukoski', 'Tyler Bailey', 'Jeremy England', 'Brandon Elzy', 'Parker Stafford'];
 
 //LINKS TO ALL THE PROFILE PICTURES
 var profilePics = [
@@ -94,13 +140,14 @@ const createAListing = () => {
   var reviews = [];
   reviews;
   var numberOfReviews = randomNumberBetween(3, 15);
-  var pictures = photoShuffle(profilePics);
+  var pictures = listShuffle(profilePics);
+  var classNames = listShuffle(names);
 
   while (numberOfReviews > 0) {
-    var userName = faker.name.findName();
+    var userName = classNames[numberOfReviews]; //faker.name.findName();
     var picUrl = pictures[numberOfReviews];
     var date = `${faker.date.month()} ${randomNumberBetween(2008, 2020)}`;
-    var paragraph = faker.lorem.paragraph();
+    var paragraph = randomParagraph(sentences); //faker.lorem.paragraph();
 
     reviews.push({
       name: userName,
@@ -166,7 +213,7 @@ const writeToCsv = () =>{
 
   csvRatingWriter.writeRecords(fullPackage.ratings)
     .then(() => {
-      console.log('sucessfull writing the ratings');
+      console.log('successfull writing the ratings');
     });
 
   //REVIEW CVS WRITER
@@ -183,7 +230,7 @@ const writeToCsv = () =>{
 
   cvsReviewWriter.writeRecords(fullPackage.reviews)
     .then(() => {
-      console.log('sucessfull writing the reviews');
+      console.log('successfull writing the reviews');
     });
 };
 

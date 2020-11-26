@@ -38,16 +38,18 @@ const PopUpModal = (props) => {
 
             <div className='right-side-modal-reviews'>
               <div className='inner-right-reviews'>
-                <div className='input-form-reviews'>
-                  <label>
-                    <i class="fas fa-search"></i>
-                    <input
-                      className='input-search-reviews'
-                      type='text'
-                      onChange={props.handleChange}
-                      onKeyDown={props.search}
-                    ></input>
-                  </label>
+                <div className='input-form-height'>
+                  <div className='input-form-reviews'>
+                    <label>
+                      <i class="fas fa-search"></i>
+                      <input
+                        className='input-search-reviews'
+                        type='text'
+                        onChange={props.handleChange}
+                        onKeyDown={props.search}
+                      ></input>
+                    </label>
+                  </div>
                 </div>
                 <br></br><br></br>
                 <AllReviews
