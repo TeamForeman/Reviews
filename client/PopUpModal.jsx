@@ -12,14 +12,16 @@ const PopUpModal = (props) => {
   const toggleShow = () => setShow(!show);
 
 
-
   return (
     <>
       <button className='btn-see-all-reviews' onClick={toggleShow}>See all {props.reviews.length} reviews</button>
 
       <Modal
         className='modal-for-reviews'
-        isOpen={show} onHide={toggleShow}>
+        isOpen={show} onHide={toggleShow}
+        onRequestClose={toggleShow}
+      >
+        {}
         <p hidden>test</p>
         <div className='reviews-module-box'>
           <div className='x-button-reviews'
@@ -53,9 +55,11 @@ const PopUpModal = (props) => {
                 </div>
                 <br></br><br></br>
                 <AllReviews
+                  isModal={true}
                   reviews={props.reviews}
                   readMore={props.readMore}
                 />
+                <p>{props.noResultsString}</p>
               </div>
             </div>
 

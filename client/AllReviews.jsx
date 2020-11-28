@@ -9,9 +9,11 @@ const AllReviews = (props) => {
         review.display = false;
         return (
           <SingleReview
+            isModal={props.isModal}
             key={review.reviews_id}
             review={review}
             readMore={props.readMore}
+            result={props.result}
           />);
       })}
       <p hidden>test</p>
