@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import useDidMount from '@rooks/use-did-mount'
 
 const SingleReview = (props) => {
   const [show, setShow] = useState(false);
@@ -10,6 +11,13 @@ const SingleReview = (props) => {
     width: '60px',
     height: '60px'
   };
+
+  console.log(props.isModal);
+  useDidMount( () => {
+    if (props.isModal) {
+      setShow(true);
+    }
+  });
 
   return (
     <div className='single-review-box'>

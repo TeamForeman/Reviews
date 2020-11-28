@@ -104,6 +104,7 @@ class App extends React.Component {
             percentageBar={this.percentageBar}
           />
           <AllReviews
+            isModal={false}
             readMore={this.readMore}
             reviews={this.state.reviews.slice(0, 4)}
           />
