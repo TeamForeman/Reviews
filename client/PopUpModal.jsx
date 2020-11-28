@@ -31,7 +31,8 @@ const PopUpModal = (props) => {
               props.resetSearch();
               toggleShow();
             }}
-          ><small><i class="fas fa-times"></i></small>
+          >
+            <i className="fas fa-times x-position-reviews"></i>
           </div>
 
           <div className='modal-inside-flex'>

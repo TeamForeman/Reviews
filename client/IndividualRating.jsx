@@ -4,7 +4,7 @@ const IndividualRating = (props) => {
 
   return (
     <div className='individual-ratings-box'>
-      <div className='individual-rating-label'>{props.rating.name}:
+      <div className='individual-rating-label'>{props.rating.name}
       </div>
       <div className='individual-score-bar'>
         <div className='individual-base-layer'>
