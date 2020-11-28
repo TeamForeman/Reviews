@@ -19,6 +19,7 @@ class App extends React.Component {
     this.readMore = this.readMore.bind(this);
     this.search = this.search.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   /*
@@ -158,6 +159,7 @@ class App extends React.Component {
             search={this.search}
             readMore={this.readMore}
             percentageBar={this.percentageBar}
+            resetSearch={this.resetSearch}
           />
         </div>
       </div>
