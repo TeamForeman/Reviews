@@ -12,13 +12,14 @@ class App extends React.Component {
       ratings: [],
       reviews: [],
       modalReviews: [],
-      searchBar: '',
+      searchBarEntry: '',
       noResultsString: ''
     };
     this.percentageBar = this.percentageBar.bind(this);
     this.readMore = this.readMore.bind(this);
     this.search = this.search.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   /*
@@ -92,22 +93,23 @@ class App extends React.Component {
   //UPDATES THE STATE OF WORDS TYPED INTO THE SEARCH BAR
   handleChange (e) {
     this.setState({
-      searchBar: e.target.value
+      searchBarEntry: e.target.value
     });
   }
 
   //INVOKED UPON ENTER UPDATES STATE OF POPUP REVIEWS
   search (e) {
     if (e.key === 'Enter') {
+      // this.resetSearch();
       var newProps = [];
       this.state.reviews.map(prop => {
-        if (prop.reviewBody.includes(this.state.searchBar)) {
+        if (prop.reviewBody.includes(this.state.searchBarEntry)) {
           newProps.push(prop);
         }
       });
       if (newProps.length === 0) {
         this.setState({
-          noResultsString: `There are no results for "${this.state.searchBar}"`
+          noResultsString: `There are no results for "${this.state.searchBarEntry}"`
         });
       }
       this.setState({
@@ -118,7 +120,10 @@ class App extends React.Component {
 
   //RESETS THE REVIEWS ON A SEARCH RESET
   resetSearch () {
+    document.getElementById('search-results').value = '';
     this.setState({
+      searchBarEntry: '',
+      noResultsString: '',
       modalReviews: this.state.reviews
     });
   }
@@ -153,11 +158,13 @@ class App extends React.Component {
             ratings={this.state.ratings}
             numOfReviews={this.state.reviews.length}
             noResultsString={this.state.noResultsString}
+            searchBarEntry={this.state.searchBarEntry}
 
             handleChange={this.handleChange}
             search={this.search}
             readMore={this.readMore}
             percentageBar={this.percentageBar}
+            resetSearch={this.resetSearch}
           />
         </div>
       </div>

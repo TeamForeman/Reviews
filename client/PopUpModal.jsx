@@ -11,21 +11,27 @@ const PopUpModal = (props) => {
 
   const toggleShow = () => setShow(!show);
 
+  const toggleAndReset = () => {
+    props.resetSearch();
+    toggleShow();
+  };
+
 
   return (
     <>
-      <button className='btn-see-all-reviews' onClick={toggleShow}>See all {props.reviews.length} reviews</button>
+      <button className='btn-see-all-reviews' onClick={toggleShow}>See all {props.numOfReviews} reviews</button>
 
       <Modal
         className='modal-for-reviews'
         isOpen={show} onHide={toggleShow}
-        onRequestClose={toggleShow}
+        onRequestClose={toggleAndReset}
       >
-        {}
         <p hidden>test</p>
         <div className='reviews-module-box'>
           <div className='x-button-reviews'
-            onClick={toggleShow}><small><i class="fas fa-times"></i></small>
+            onClick={toggleAndReset}
+          >
+            <i className='fas fa-times x-position-reviews'></i>
           </div>
 
           <div className='modal-inside-flex'>
@@ -43,13 +49,18 @@ const PopUpModal = (props) => {
                 <div className='input-form-height'>
                   <div className='input-form-reviews'>
                     <label>
-                      <i class="fas fa-search"></i>
+                      <i class="fas fa-search smaller-font-padding"></i>
                       <input
-                        className='input-search-reviews'
+                        id='search-results'
+                        className='input-search-reviews smaller-font-padding'
                         type='text'
                         onChange={props.handleChange}
                         onKeyDown={props.search}
                       ></input>
+                      {props.searchBarEntry.length > 0 &&
+                      <i className='fas fa-times-circle clear-search-x'
+                        onClick={props.resetSearch}
+                      ></i>}
                     </label>
                   </div>
                 </div>
