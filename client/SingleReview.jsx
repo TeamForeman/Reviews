@@ -2,20 +2,15 @@ import React, {useEffect, useState} from 'react';
 import useDidMount from '@rooks/use-did-mount'
 
 const SingleReview = (props) => {
+
+  //TOGGLES THE VIEW OF THE READMORE BUTTON AND SECOND HALF OF REVIEW BODY
   const [show, setShow] = useState(false);
   const toggleShow = () => setShow(!show);
 
-  var imageStyle = {
-    background: `url(${props.review.profilePic})`,
-    borderRadius: '50%',
-    width: '60px',
-    height: '60px'
-  };
-
-  console.log(props.isModal);
+  //REMOVES READMORE BUTTON IN POPUP AND SHORT PARAGRAPHS
   useDidMount( () => {
-    if (props.isModal) {
-      setShow(true);
+    if (props.isModal || props.review.reviewBody.length < 100) {
+      toggleShow();
     }
   });
 

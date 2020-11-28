@@ -59,6 +59,7 @@ const PopUpModal = (props) => {
                   reviews={props.reviews}
                   readMore={props.readMore}
                 />
+                <p>{props.noResultsString}</p>
               </div>
             </div>
 
