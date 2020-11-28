@@ -19,9 +19,11 @@ const PopUpModal = (props) => {
       <Modal
         className='modal-for-reviews'
         isOpen={show} onHide={toggleShow}
-        onRequestClose={toggleShow}
+        onRequestClose={() => {
+          props.resetSearch();
+          toggleShow();
+        }}
       >
-        {}
         <p hidden>test</p>
         <div className='reviews-module-box'>
           <div className='x-button-reviews'

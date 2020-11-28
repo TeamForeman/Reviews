@@ -100,6 +100,7 @@ class App extends React.Component {
   //INVOKED UPON ENTER UPDATES STATE OF POPUP REVIEWS
   search (e) {
     if (e.key === 'Enter') {
+      this.resetSearch();
       var newProps = [];
       this.state.reviews.map(prop => {
         if (prop.reviewBody.includes(this.state.searchBar)) {
@@ -120,6 +121,8 @@ class App extends React.Component {
   //RESETS THE REVIEWS ON A SEARCH RESET
   resetSearch () {
     this.setState({
+      searchBar: '',
+      noResultsString: '',
       modalReviews: this.state.reviews
     });
   }
