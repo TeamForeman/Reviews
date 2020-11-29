@@ -103,7 +103,7 @@ class App extends React.Component {
       // this.resetSearch();
       var newProps = [];
       this.state.reviews.map(prop => {
-        if (prop.reviewBody.includes(this.state.searchBarEntry)) {
+        if (prop.reviewBody.toLowerCase().includes(this.state.searchBarEntry.toLowerCase())) {
           newProps.push(prop);
         }
       });
