@@ -174,9 +174,9 @@
 =========================================
  */
 
- .ReactModal__Overlay {
-  z-index: 1000;
- }
+.ReactModal__Overlay {
+ z-index: 1000;
+}
 
 .modal-for-reviews {
   font-family: 'Roboto', sans-serif;
@@ -264,6 +264,7 @@
   padding: 15px;
   background-color: rgba(233, 220, 220, 0.098);
   border: 1px solid rgba(128, 128, 128, 0.66);
+  position: relative;
 }
 
 .input-form-reviews:focus-within {
@@ -271,7 +272,7 @@
 }
 
 .input-search-reviews{
-  width: 90%;
+  width: 80%;
   outline: none;
   margin-left: 10px;
   border: none;
@@ -282,6 +283,8 @@
   border-radius: 50%;
   background-color: rgba(128, 128, 128, 1);
   color: rgb(219, 219, 219);
+  position: absolute;
+  right: 15px;
 }
 
 .clear-search-x:hover {

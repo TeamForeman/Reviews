@@ -7,7 +7,6 @@ import AllReviews from './AllReviews.jsx';
 Modal.setAppElement(document.getElementById('app'));
 
 const PopUpModal = (props) => {
-
   //RENDERS THE MODAL
   const [show, setShow] = useState(false);
   const toggleShow = () => setShow(!show);
@@ -50,20 +49,18 @@ const PopUpModal = (props) => {
               <div className='inner-right-reviews'>
                 <div className='input-form-height'>
                   <div className='input-form-reviews'>
-                    <label>
-                      <i class="fas fa-search smaller-font-padding"></i>
-                      <input
-                        id='search-results'
-                        className='input-search-reviews smaller-font-padding'
-                        type='text'
-                        onChange={props.handleChange}
-                        onKeyDown={props.search}
-                      ></input>
-                      {props.searchBarEntry.length > 0 &&
-                      <i className='fas fa-times-circle clear-search-x'
-                        onClick={props.resetSearch}
-                      ></i>}
-                    </label>
+                    <i class='fas fa-search'></i>
+                    <input
+                      id='search-results'
+                      className='input-search-reviews'
+                      type='text'
+                      onChange={props.handleChange}
+                      onKeyDown={props.search}
+                    ></input>
+                    {props.searchBarEntry.length > 0 &&
+                    <i className='fas fa-times-circle clear-search-x'
+                      onClick={props.resetSearch}
+                    ></i>}
                   </div>
                 </div>
                 <br></br><br></br>
