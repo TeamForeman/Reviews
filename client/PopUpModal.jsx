@@ -7,10 +7,12 @@ import AllReviews from './AllReviews.jsx';
 Modal.setAppElement(document.getElementById('app'));
 
 const PopUpModal = (props) => {
-  const [show, setShow] = useState(false);
 
+  //RENDERS THE MODAL
+  const [show, setShow] = useState(false);
   const toggleShow = () => setShow(!show);
 
+  //RENDERS THE MODAL AND RESETS SEARCH INPUT
   const toggleAndReset = () => {
     props.resetSearch();
     toggleShow();
@@ -69,6 +71,7 @@ const PopUpModal = (props) => {
                   isModal={true}
                   reviews={props.reviews}
                   readMore={props.readMore}
+                  wordsToHighlight={props.wordsToHighlight}
                 />
                 <p>{props.noResultsString}</p>
               </div>

@@ -13,7 +13,8 @@ class App extends React.Component {
       reviews: [],
       modalReviews: [],
       searchBarEntry: '',
-      noResultsString: ''
+      noResultsString: '',
+      wordsToHighlight: '',
     };
     this.percentageBar = this.percentageBar.bind(this);
     this.readMore = this.readMore.bind(this);
@@ -99,11 +100,12 @@ class App extends React.Component {
 
   //INVOKED UPON ENTER UPDATES STATE OF POPUP REVIEWS
   search (e) {
+    console.log('e?', e.target.value)
     if (e.key === 'Enter') {
       // this.resetSearch();
       var newProps = [];
       this.state.reviews.map(prop => {
-        if (prop.reviewBody.includes(this.state.searchBarEntry)) {
+        if (prop.reviewBody.toLowerCase().includes(this.state.searchBarEntry.toLowerCase())) {
           newProps.push(prop);
         }
       });
@@ -112,8 +114,10 @@ class App extends React.Component {
           noResultsString: `There are no results for "${this.state.searchBarEntry}"`
         });
       }
+      var wordsSearched = this.state.searchBarEntry.split(' ').filter(word => word)
       this.setState({
-        modalReviews: newProps
+        modalReviews: newProps,
+        wordsToHighlight: this.state.searchBarEntry
       });
     }
   }
@@ -128,10 +132,6 @@ class App extends React.Component {
     });
   }
 
-  //CLICKING THE X BUTTON IN THE INPUT BAR
-
-
-
   /*
   ============================================================
     RENDER
@@ -139,6 +139,7 @@ class App extends React.Component {
   */
 
   render () {
+
     return (
       <div className='reviews-margin-body'>
         <div className='reviews-full-body'>
@@ -150,8 +151,9 @@ class App extends React.Component {
           />
           <AllReviews
             isModal={false}
-            readMore={this.readMore}
             reviews={this.state.reviews.slice(0, 4)}
+            wordsToHighlight={this.state.wordsToHighlight}
+            readMore={this.readMore}
           />
           <PopUpModal
             reviews={this.state.modalReviews}
@@ -159,7 +161,7 @@ class App extends React.Component {
             numOfReviews={this.state.reviews.length}
             noResultsString={this.state.noResultsString}
             searchBarEntry={this.state.searchBarEntry}
-
+            wordsToHighlight={this.state.wordsToHighlight}
             handleChange={this.handleChange}
             search={this.search}
             readMore={this.readMore}

@@ -13,6 +13,7 @@ const AllReviews = (props) => {
             key={review.reviews_id}
             review={review}
             readMore={props.readMore}
+            wordsToHighlight={props.wordsToHighlight}
           />);
       })}
       <p hidden>test</p>

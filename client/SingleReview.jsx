@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import useDidMount from '@rooks/use-did-mount'
+import useDidMount from '@rooks/use-did-mount';
+import Highlighter from "react-highlight-words";
 
 const SingleReview = (props) => {
 
@@ -9,7 +10,7 @@ const SingleReview = (props) => {
 
   //REMOVES READMORE BUTTON IN POPUP AND SHORT PARAGRAPHS
   useDidMount( () => {
-    if (props.isModal || props.review.reviewBody.length < 100) {
+    if (props.review.reviewBody.length < 100) {
       toggleShow();
     }
   });
@@ -26,7 +27,8 @@ const SingleReview = (props) => {
           <p className='review-date'>{props.review.date}</p>
         </span>
       </div>
-      <p className='review-paragraph'>
+      {/* THE REVIEW BODY FOR THE MAIN PAGE */}
+      {!props.isModal &&<p className='review-paragraph padding-right-review'>
         {props.readMore(props.review.reviewBody)[0]}
         {!show &&
           <span>...
@@ -38,11 +40,16 @@ const SingleReview = (props) => {
             {props.readMore(props.review.reviewBody)[1]}
           </span>
         }
-      </p>
+      </p>}
+      {/* THE REVIEW BODY FOR THE POPUP MODAL */}
+      {props.isModal && <Highlighter
+        className='review-paragraph'
+        highlightClassName='review-paragraph'
+        searchWords={[props.wordsToHighlight]}
+        textToHighlight={props.review.reviewBody}
+      />}
     </div>
-
   );
-
 };
 
 export default SingleReview;

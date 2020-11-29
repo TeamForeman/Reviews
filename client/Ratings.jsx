@@ -3,6 +3,8 @@ import IndividualRating from './IndividualRating.jsx';
 
 
 const Ratings = (props) => {
+
+  //LOCATES NAME AND RATINGS
   var arrOfRatings = [];
   for ( var key in props.ratings) {
     if (key !== 'ratings_id' && key !== 'average') {

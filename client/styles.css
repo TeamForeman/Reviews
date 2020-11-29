@@ -8,6 +8,7 @@
   font-family: 'Roboto', sans-serif;
   margin: 100px, 50px;
 }
+
 .reviews-full-body {
   max-width: 1128px;
   margin: auto;
@@ -125,8 +126,11 @@
   font-weight: 500;
 }
 
-.review-paragraph {
+.padding-right-review {
   padding-right: 20px;
+}
+
+.review-paragraph {
   font-weight: 300;
   line-height: 1.6;
 }
@@ -214,7 +218,6 @@
   padding-top: 7px;
   justify-content: center;
   align-items: center;
-
 }
 
 /*
