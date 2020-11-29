@@ -111,14 +111,16 @@ class App extends React.Component {
       });
       if (newProps.length === 0) {
         this.setState({
+          modalReviews: newProps,
           noResultsString: `There are no results for "${this.state.searchBarEntry}"`
         });
+      } else {
+        this.setState({
+          noResultsString: '',
+          modalReviews: newProps,
+          wordsToHighlight: this.state.searchBarEntry
+        });
       }
-      var wordsSearched = this.state.searchBarEntry.split(' ').filter(word => word)
-      this.setState({
-        modalReviews: newProps,
-        wordsToHighlight: this.state.searchBarEntry
-      });
     }
   }
 
