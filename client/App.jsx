@@ -128,6 +128,7 @@ class App extends React.Component {
     this.setState({
       searchBarEntry: '',
       noResultsString: '',
+      wordsToHighlight: '',
       modalReviews: this.state.reviews
     });
   }
