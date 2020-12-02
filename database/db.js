@@ -33,6 +33,10 @@ const updateReview = (id, reviewBody, callback) => {
   });
 };
 
+const deleteReview = () => {
+
+};
+
 module.exports = {
   getAllDataFromTable,
   addReview,
