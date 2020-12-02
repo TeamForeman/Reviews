@@ -14,6 +14,15 @@
 1. [Usage](#Usage)
 1. [Development](#development)
 
+## CRUD API
+Action | METHOD | URL
+-------|--------|----
+Create a review | POST | /api/reviews-module/reviews
+Retrieve reviews | GET | /api/reviews-module/reviews/:id
+Retrieve ratings | GET | /api/reviews-module/ratings/:id
+Update a review | UPDATE | /api/reviews-module/reviews/:id
+Delete a review | DELETE | /api/reviews-module/reviews/:id
+
 ## Usage
 
 Startind node / nodemon
