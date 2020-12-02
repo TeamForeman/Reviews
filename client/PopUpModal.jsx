@@ -10,11 +10,27 @@ const PopUpModal = (props) => {
   //RENDERS THE MODAL
   const [show, setShow] = useState(false);
   const toggleShow = () => setShow(!show);
+  const [reviewText, setReviewText] = useState('');
+  const [username, setUsername] = useState('');
 
   //RENDERS THE MODAL AND RESETS SEARCH INPUT
   const toggleAndReset = () => {
     props.resetSearch();
     toggleShow();
+  };
+
+  const formOnChange = (e) => {
+    if (e.target.name === 'reviewText') {
+      setReviewText(e.target.value);
+    } else {
+      setUsername(e.target.value);
+    }
+  };
+
+  const addReview = (e) => {
+    console.log(reviewText);
+    console.log(username);
+    e.preventDefault();
   };
 
 
@@ -43,6 +59,14 @@ const PopUpModal = (props) => {
                 numOfReviews={props.numOfReviews}
                 percentageBar={props.percentageBar}
               />
+
+
+              <form>
+                <input type='text' name='userName' onChange={formOnChange}></input>
+                <textarea name='reviewText' onChange={formOnChange}>
+                </textarea>
+                <input type='submit' value='Submit' onClick={addReview}/>
+              </form>
             </div>
 
             <div className='right-side-modal-reviews'>

@@ -24,6 +24,28 @@ app.get('/api/reviews-module/ratings/:id', (req, res) => {
   });
 });
 
+app.post('/api/reviews-module/reviews', (req, res) => {
+  const { username, date, review, pic } = req.body;
+  const data = [username, date, review, pic];
+  // console.log(data);
+  // res.sendStatus(200);
+  db.addReview(data, (err, results) => {
+    err ? console.log(err) : res.sendStatus(200);
+  });
+});
+
+app.put('/api/reviews-module/reviews/:id', (req, res) => {
+  const { review } = req.body;
+  db.updateReview(req.params.id, review, (err, results) => {
+    err ? console.log(err) : res.sendStatus(200);
+  });
+});
+
+app.delete('/api/reviews-module/reviews/:id', (req, res) => {
+
+});
+
+
 app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });

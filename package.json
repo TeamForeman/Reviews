@@ -13,7 +13,8 @@
     "start": "node ./server/index.js",
     "start:pm2": "pm2 start ./server/index.js",
     "stop:pm2": "pm2 stop ./server/index.js",
-    "seed": "mysql -u root < database/schema.sql && node ./database/seeder/fakeData.js",
+    "seed": "node ./database/seeder/fakeData.js",
+    "reset": "mysql -u root -p < database/schema.sql",
     "test": "jest"
   },
   "dependencies": {

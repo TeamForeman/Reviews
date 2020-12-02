@@ -3,7 +3,8 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  database: 'beartnt_reviews'
+  database: 'beartnt_reviews',
+  password: 'Fabi!995'
 });
 
 con.connect(err => {
@@ -18,7 +19,23 @@ const getAllDataFromTable = (table, id, callback) => {
   });
 };
 
+const addReview = (data, callback) => {
+  var query = 'INSERT INTO reviews (name, date, reviewBody, profilePic) VALUES (?, ?, ?, ?) ';
+  con.query(query, data, (err, res) => {
+    err ? callback(err) : callback(null, res);
+  });
+};
+
+const updateReview = (id, reviewBody, callback) => {
+  var query = 'UPDATE reviews SET reviewBody = ? WHERE reviews_id = ?';
+  con.query(query, [reviewBody, id], (err, res) => {
+    err ? callback(err) : callback(null, res);
+  });
+};
+
 module.exports = {
   getAllDataFromTable,
+  addReview,
+  updateReview,
   con
 };
