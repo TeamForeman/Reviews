@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "sdc",
   "version": "",
   "description": "",
-  "author": "",
+  "author": "Fabian",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
@@ -13,9 +13,10 @@
     "start": "node ./server/index.js",
     "start:pm2": "pm2 start ./server/index.js",
     "stop:pm2": "pm2 stop ./server/index.js",
-    "seed": "node ./database/seeder/fakeData.js",
-    "reset": "mysql -u root -p < database/schema.sql",
-    "test": "jest"
+    "createData": "node database/Postgres/psqlSeed/createData.js",
+    "reset": "psql fabianyee -f database/Postgres/psqlschema.sql",
+    "test": "jest",
+    "seed": "node database/Postgres/db.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
@@ -26,12 +27,14 @@
     "babel-loader": "^8.2.1",
     "body-parser": "^1.19.0",
     "csv-writer": "^1.6.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "fast-csv": "^4.3.5",
     "fs": "0.0.1-security",
     "mysql": "^2.18.1",
     "path": "^0.12.7",
+    "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",

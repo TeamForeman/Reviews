@@ -5,16 +5,20 @@
 npm
 npm-debug.log
 node_modules/
+.env
+public/bundle.js
 
 database/seeder/ratings.csv
 database/seeder/reviews.csv
+database/Postgres/psqlSeed/product.csv
+database/Postgres/psqlSeed/review.csv
+database/Postgres/psqlSeed/user.csv
 
 pids
 *.pid
 logs
 *.log
 
-Beartnt.pem
 
 commands.txt
 
@@ -33,3 +37,4 @@ build/
 dist/
 
 # csv files for seeding the database
+

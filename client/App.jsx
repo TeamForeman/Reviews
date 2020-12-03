@@ -34,7 +34,7 @@ class App extends React.Component {
     var id = window.location.pathname.split('/');
     id = id[id.length - 1];
     if (id.length === 0) {
-      id = 67;
+      id = 100;
     }
 
     axios.get(`/api/reviews-module/reviews/${id}`)
@@ -100,7 +100,7 @@ class App extends React.Component {
 
   //INVOKED UPON ENTER UPDATES STATE OF POPUP REVIEWS
   search (e) {
-    console.log('e?', e.target.value)
+    console.log('e?', e.target.value);
     if (e.key === 'Enter') {
       // this.resetSearch();
       var newProps = [];
