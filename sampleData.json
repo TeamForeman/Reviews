@@ -1,0 +1,748 @@
+{
+  "command": "SELECT",
+  "rowCount": 88,
+  "oid": null,
+  "rows": [
+      {
+          "id": 20469,
+          "reviewbody": " This place is awesome! My partner and I always wanted to visit. I came here for my honemoon.",
+          "date": "February 2016",
+          "user_id": 16,
+          "product_id": 1
+      },
+      {
+          "id": 199449,
+          "reviewbody": " The owner wouldn't let me bring my pet bear. BE WARNED!",
+          "date": "October 2011",
+          "user_id": 36,
+          "product_id": 1
+      },
+      {
+          "id": 553524,
+          "reviewbody": " You can tell the owner really likes bears. Very much worth it. But the owner was cool. You can tell the owner really likes bears.",
+          "date": "September 2002",
+          "user_id": 8,
+          "product_id": 1
+      },
+      {
+          "id": 610293,
+          "reviewbody": " The owner has the best style. I want my money back.",
+          "date": "March 2011",
+          "user_id": 30,
+          "product_id": 1
+      },
+      {
+          "id": 696819,
+          "reviewbody": " NO INDOOR PLUMBING!! The owner has the best style. The owner wouldn't let me bring my pet bear. Very much worth it.",
+          "date": "July 2007",
+          "user_id": 7,
+          "product_id": 1
+      },
+      {
+          "id": 861301,
+          "reviewbody": " But seriously tell all your friends! And I would do it again! You can tell the owner really likes bears.",
+          "date": "January 2000",
+          "user_id": 31,
+          "product_id": 1
+      },
+      {
+          "id": 924835,
+          "reviewbody": " My partner and I always wanted to visit.",
+          "date": "May 2002",
+          "user_id": 28,
+          "product_id": 1
+      },
+      {
+          "id": 958223,
+          "reviewbody": " This place is awesome! We had so much fun! The town was very cute. The place smelled very bad!",
+          "date": "October 2001",
+          "user_id": 24,
+          "product_id": 1
+      },
+      {
+          "id": 1014992,
+          "reviewbody": " I do not regret anything! My partner and I always wanted to visit. The torcher chamber was a bit too much. We had so much fun!",
+          "date": "June 2013",
+          "user_id": 23,
+          "product_id": 1
+      },
+      {
+          "id": 1078624,
+          "reviewbody": " Very much worth it. I want my money back.",
+          "date": "July 2020",
+          "user_id": 15,
+          "product_id": 1
+      },
+      {
+          "id": 1319529,
+          "reviewbody": " But the owner was cool. I came here for my honemoon. We had so much fun! BE WARNED!",
+          "date": "March 2005",
+          "user_id": 36,
+          "product_id": 1
+      },
+      {
+          "id": 1332619,
+          "reviewbody": " I came here for my honemoon. It was quite a drive from the airport.",
+          "date": "January 2002",
+          "user_id": 26,
+          "product_id": 1
+      },
+      {
+          "id": 1442914,
+          "reviewbody": " And I would do it again! The owner wouldn't let me bring my pet bear. The place smelled very bad! I want my money back.",
+          "date": "January 2015",
+          "user_id": 29,
+          "product_id": 1
+      },
+      {
+          "id": 1454854,
+          "reviewbody": " I do not regret anything! The town was very cute. But seriously tell all your friends! And I would do it again! The view form the back porch was to die for. It was quite a drive from the airport.",
+          "date": "March 2019",
+          "user_id": 11,
+          "product_id": 1
+      },
+      {
+          "id": 1482581,
+          "reviewbody": " This place is awesome! My partner and I always wanted to visit.",
+          "date": "November 2020",
+          "user_id": 4,
+          "product_id": 1
+      },
+      {
+          "id": 1541080,
+          "reviewbody": " I wish I could have stayed longer.",
+          "date": "October 2019",
+          "user_id": 16,
+          "product_id": 1
+      },
+      {
+          "id": 1549653,
+          "reviewbody": " And I would do it again! I do not regret anything! My partner and I always wanted to visit. You can tell the owner really likes bears. The owner has the best style. The owner has the best style. But the owner was cool.",
+          "date": "January 2014",
+          "user_id": 2,
+          "product_id": 1
+      },
+      {
+          "id": 1605559,
+          "reviewbody": " BE WARNED!",
+          "date": "June 2014",
+          "user_id": 26,
+          "product_id": 1
+      },
+      {
+          "id": 1618832,
+          "reviewbody": " But the owner was cool. I came here for my honemoon. NO INDOOR PLUMBING!!",
+          "date": "June 2019",
+          "user_id": 40,
+          "product_id": 1
+      },
+      {
+          "id": 1716893,
+          "reviewbody": " The town was very cute.",
+          "date": "March 2000",
+          "user_id": 3,
+          "product_id": 1
+      },
+      {
+          "id": 1953462,
+          "reviewbody": " I wish I could have stayed longer. The owner has the best style. Why didn't I find this place sooner? The town was very cute.",
+          "date": "February 2004",
+          "user_id": 7,
+          "product_id": 1
+      },
+      {
+          "id": 1993867,
+          "reviewbody": " This place is awesome! The view form the back porch was to die for.",
+          "date": "October 2019",
+          "user_id": 19,
+          "product_id": 1
+      },
+      {
+          "id": 2087004,
+          "reviewbody": " But seriously tell all your friends!",
+          "date": "September 2020",
+          "user_id": 4,
+          "product_id": 1
+      },
+      {
+          "id": 2397224,
+          "reviewbody": " But the owner was cool. BE WARNED! I wish I could have stayed longer.",
+          "date": "March 2012",
+          "user_id": 5,
+          "product_id": 1
+      },
+      {
+          "id": 2405382,
+          "reviewbody": " The place smelled very bad! I wish I could have stayed longer.",
+          "date": "July 2011",
+          "user_id": 24,
+          "product_id": 1
+      },
+      {
+          "id": 2433160,
+          "reviewbody": " BEST TRIP EVER!",
+          "date": "November 2003",
+          "user_id": 20,
+          "product_id": 1
+      },
+      {
+          "id": 2581770,
+          "reviewbody": " This place is awesome! I came here for my honemoon.",
+          "date": "July 2002",
+          "user_id": 8,
+          "product_id": 1
+      },
+      {
+          "id": 2733949,
+          "reviewbody": " My partner and I always wanted to visit. The owner wouldn't let me bring my pet bear.",
+          "date": "December 2002",
+          "user_id": 17,
+          "product_id": 1
+      },
+      {
+          "id": 2946702,
+          "reviewbody": " It was quite a drive from the airport. Very much worth it.",
+          "date": "March 2014",
+          "user_id": 3,
+          "product_id": 1
+      },
+      {
+          "id": 3051394,
+          "reviewbody": " But the owner was cool. BEST TRIP EVER! But the owner was cool.",
+          "date": "December 2001",
+          "user_id": 22,
+          "product_id": 1
+      },
+      {
+          "id": 3203850,
+          "reviewbody": " The view form the back porch was to die for. I do not regret anything! My partner and I always wanted to visit. BE WARNED! The town was very cute. The place smelled very bad!",
+          "date": "November 2000",
+          "user_id": 29,
+          "product_id": 1
+      },
+      {
+          "id": 3262444,
+          "reviewbody": " The owner has the best style. BE WARNED!",
+          "date": "July 2016",
+          "user_id": 10,
+          "product_id": 1
+      },
+      {
+          "id": 3422893,
+          "reviewbody": " The view form the back porch was to die for.",
+          "date": "February 2000",
+          "user_id": 9,
+          "product_id": 1
+      },
+      {
+          "id": 3430513,
+          "reviewbody": " Why didn't I find this place sooner?",
+          "date": "October 2005",
+          "user_id": 36,
+          "product_id": 1
+      },
+      {
+          "id": 3472113,
+          "reviewbody": " The town was very cute.",
+          "date": "June 2014",
+          "user_id": 29,
+          "product_id": 1
+      },
+      {
+          "id": 3739420,
+          "reviewbody": " Why didn't I find this place sooner? But the owner was cool. The view form the back porch was to die for.",
+          "date": "September 2013",
+          "user_id": 31,
+          "product_id": 1
+      },
+      {
+          "id": 3874963,
+          "reviewbody": " Why didn't I find this place sooner?",
+          "date": "October 2002",
+          "user_id": 18,
+          "product_id": 1
+      },
+      {
+          "id": 4053298,
+          "reviewbody": " The owner wouldn't let me bring my pet bear. We had so much fun! I do not regret anything! This place is awesome! This place is awesome! I wish I could have stayed longer.",
+          "date": "March 2007",
+          "user_id": 18,
+          "product_id": 1
+      },
+      {
+          "id": 4106698,
+          "reviewbody": " We had so much fun! But the owner was cool. NO INDOOR PLUMBING!! I came here for my honemoon.",
+          "date": "March 2000",
+          "user_id": 13,
+          "product_id": 1
+      },
+      {
+          "id": 4253533,
+          "reviewbody": " The town was very cute. I wish I could have stayed longer.",
+          "date": "November 2005",
+          "user_id": 23,
+          "product_id": 1
+      },
+      {
+          "id": 4397040,
+          "reviewbody": " I came here for my honemoon. I came here for my honemoon.",
+          "date": "January 2009",
+          "user_id": 9,
+          "product_id": 1
+      },
+      {
+          "id": 4399464,
+          "reviewbody": " The owner has the best style.",
+          "date": "April 2006",
+          "user_id": 13,
+          "product_id": 1
+      },
+      {
+          "id": 4851833,
+          "reviewbody": " But the owner was cool. This place is awesome!",
+          "date": "October 2003",
+          "user_id": 40,
+          "product_id": 1
+      },
+      {
+          "id": 4865895,
+          "reviewbody": " It was quite a drive from the airport. The owner wouldn't let me bring my pet bear. It was quite a drive from the airport. NO INDOOR PLUMBING!! Very much worth it.",
+          "date": "December 2008",
+          "user_id": 23,
+          "product_id": 1
+      },
+      {
+          "id": 4969857,
+          "reviewbody": " My partner and I always wanted to visit. And I would do it again! Very much worth it.",
+          "date": "May 2006",
+          "user_id": 8,
+          "product_id": 1
+      },
+      {
+          "id": 4980564,
+          "reviewbody": " And I would do it again! We had so much fun! You can tell the owner really likes bears. The town was very cute. I want my money back. The owner has the best style.",
+          "date": "December 2002",
+          "user_id": 32,
+          "product_id": 1
+      },
+      {
+          "id": 5036027,
+          "reviewbody": " NO INDOOR PLUMBING!!",
+          "date": "May 2014",
+          "user_id": 35,
+          "product_id": 1
+      },
+      {
+          "id": 5056877,
+          "reviewbody": " Why didn't I find this place sooner?",
+          "date": "May 2009",
+          "user_id": 16,
+          "product_id": 1
+      },
+      {
+          "id": 5057509,
+          "reviewbody": " This place is awesome! BEST TRIP EVER!",
+          "date": "May 2001",
+          "user_id": 10,
+          "product_id": 1
+      },
+      {
+          "id": 5070854,
+          "reviewbody": " You can tell the owner really likes bears. The view form the back porch was to die for.",
+          "date": "May 2011",
+          "user_id": 32,
+          "product_id": 1
+      },
+      {
+          "id": 5088178,
+          "reviewbody": " The owner has the best style.",
+          "date": "May 2019",
+          "user_id": 19,
+          "product_id": 1
+      },
+      {
+          "id": 5150696,
+          "reviewbody": " You can tell the owner really likes bears. Why didn't I find this place sooner?",
+          "date": "April 2018",
+          "user_id": 13,
+          "product_id": 1
+      },
+      {
+          "id": 5180271,
+          "reviewbody": " Why didn't I find this place sooner? But seriously tell all your friends! The owner has the best style. BEST TRIP EVER!",
+          "date": "August 2001",
+          "user_id": 2,
+          "product_id": 1
+      },
+      {
+          "id": 5245214,
+          "reviewbody": " BE WARNED! My partner and I always wanted to visit. The owner has the best style.",
+          "date": "April 2001",
+          "user_id": 38,
+          "product_id": 1
+      },
+      {
+          "id": 5467811,
+          "reviewbody": " The torcher chamber was a bit too much. The view form the back porch was to die for. Why didn't I find this place sooner?",
+          "date": "July 2018",
+          "user_id": 5,
+          "product_id": 1
+      },
+      {
+          "id": 5546403,
+          "reviewbody": " The torcher chamber was a bit too much. The owner wouldn't let me bring my pet bear.",
+          "date": "March 2004",
+          "user_id": 19,
+          "product_id": 1
+      },
+      {
+          "id": 5555745,
+          "reviewbody": " And I would do it again! BE WARNED! I wish I could have stayed longer. NO INDOOR PLUMBING!!",
+          "date": "January 2004",
+          "user_id": 8,
+          "product_id": 1
+      },
+      {
+          "id": 5726150,
+          "reviewbody": " The town was very cute.",
+          "date": "April 2003",
+          "user_id": 1,
+          "product_id": 1
+      },
+      {
+          "id": 5977518,
+          "reviewbody": " This place is awesome!",
+          "date": "April 2006",
+          "user_id": 10,
+          "product_id": 1
+      },
+      {
+          "id": 6184183,
+          "reviewbody": " Why didn't I find this place sooner? But seriously tell all your friends!",
+          "date": "June 2016",
+          "user_id": 23,
+          "product_id": 1
+      },
+      {
+          "id": 6233295,
+          "reviewbody": " It was quite a drive from the airport. BEST TRIP EVER! But seriously tell all your friends! The town was very cute. BEST TRIP EVER!",
+          "date": "October 2018",
+          "user_id": 17,
+          "product_id": 1
+      },
+      {
+          "id": 6439027,
+          "reviewbody": " We had so much fun! The owner wouldn't let me bring my pet bear. My partner and I always wanted to visit. Why didn't I find this place sooner? This place is awesome!",
+          "date": "March 2015",
+          "user_id": 34,
+          "product_id": 1
+      },
+      {
+          "id": 6654107,
+          "reviewbody": " But seriously tell all your friends! NO INDOOR PLUMBING!! The place smelled very bad! Very much worth it.",
+          "date": "February 2009",
+          "user_id": 7,
+          "product_id": 1
+      },
+      {
+          "id": 6746354,
+          "reviewbody": " Why didn't I find this place sooner? I wish I could have stayed longer. But the owner was cool. And I would do it again!",
+          "date": "April 2015",
+          "user_id": 39,
+          "product_id": 1
+      },
+      {
+          "id": 6839381,
+          "reviewbody": " The place smelled very bad! You can tell the owner really likes bears. Very much worth it. NO INDOOR PLUMBING!! But the owner was cool. It was quite a drive from the airport.",
+          "date": "September 2007",
+          "user_id": 1,
+          "product_id": 1
+      },
+      {
+          "id": 7059621,
+          "reviewbody": " BE WARNED! But the owner was cool. BEST TRIP EVER!",
+          "date": "November 2015",
+          "user_id": 40,
+          "product_id": 1
+      },
+      {
+          "id": 7104504,
+          "reviewbody": " I want my money back. We had so much fun! The place smelled very bad!",
+          "date": "June 2009",
+          "user_id": 30,
+          "product_id": 1
+      },
+      {
+          "id": 7237922,
+          "reviewbody": " The owner wouldn't let me bring my pet bear. The place smelled very bad!",
+          "date": "September 2015",
+          "user_id": 11,
+          "product_id": 1
+      },
+      {
+          "id": 7312171,
+          "reviewbody": " My partner and I always wanted to visit. I want my money back. It was quite a drive from the airport.",
+          "date": "March 2004",
+          "user_id": 21,
+          "product_id": 1
+      },
+      {
+          "id": 7361849,
+          "reviewbody": " Why didn't I find this place sooner? Very much worth it. BE WARNED! The view form the back porch was to die for.",
+          "date": "July 2020",
+          "user_id": 1,
+          "product_id": 1
+      },
+      {
+          "id": 7471549,
+          "reviewbody": " Why didn't I find this place sooner? The place smelled very bad! The torcher chamber was a bit too much.",
+          "date": "April 2000",
+          "user_id": 21,
+          "product_id": 1
+      },
+      {
+          "id": 7518552,
+          "reviewbody": " The view form the back porch was to die for. The torcher chamber was a bit too much.",
+          "date": "December 2005",
+          "user_id": 39,
+          "product_id": 1
+      },
+      {
+          "id": 7573822,
+          "reviewbody": " I want my money back. The view form the back porch was to die for.",
+          "date": "May 2016",
+          "user_id": 30,
+          "product_id": 1
+      },
+      {
+          "id": 7716560,
+          "reviewbody": " My partner and I always wanted to visit. This place is awesome! The owner wouldn't let me bring my pet bear. We had so much fun! The town was very cute. BE WARNED!",
+          "date": "May 2014",
+          "user_id": 4,
+          "product_id": 1
+      },
+      {
+          "id": 7772983,
+          "reviewbody": " The view form the back porch was to die for. NO INDOOR PLUMBING!! It was quite a drive from the airport. The owner has the best style.",
+          "date": "January 2001",
+          "user_id": 5,
+          "product_id": 1
+      },
+      {
+          "id": 8021617,
+          "reviewbody": " It was quite a drive from the airport.",
+          "date": "November 2006",
+          "user_id": 39,
+          "product_id": 1
+      },
+      {
+          "id": 8512760,
+          "reviewbody": " NO INDOOR PLUMBING!! But the owner was cool. Very much worth it. But the owner was cool.",
+          "date": "May 2016",
+          "user_id": 4,
+          "product_id": 1
+      },
+      {
+          "id": 8545977,
+          "reviewbody": " BE WARNED! The place smelled very bad! BE WARNED!",
+          "date": "April 2012",
+          "user_id": 1,
+          "product_id": 1
+      },
+      {
+          "id": 8794545,
+          "reviewbody": " And I would do it again!",
+          "date": "January 2008",
+          "user_id": 28,
+          "product_id": 1
+      },
+      {
+          "id": 8960106,
+          "reviewbody": " But seriously tell all your friends! I came here for my honemoon.",
+          "date": "August 2009",
+          "user_id": 6,
+          "product_id": 1
+      },
+      {
+          "id": 9061313,
+          "reviewbody": " My partner and I always wanted to visit. Why didn't I find this place sooner? It was quite a drive from the airport.",
+          "date": "July 2007",
+          "user_id": 29,
+          "product_id": 1
+      },
+      {
+          "id": 9171514,
+          "reviewbody": " This place is awesome! The torcher chamber was a bit too much. The place smelled very bad!",
+          "date": "September 2017",
+          "user_id": 27,
+          "product_id": 1
+      },
+      {
+          "id": 9502714,
+          "reviewbody": " The owner has the best style. NO INDOOR PLUMBING!!",
+          "date": "June 2014",
+          "user_id": 29,
+          "product_id": 1
+      },
+      {
+          "id": 9525334,
+          "reviewbody": " You can tell the owner really likes bears. Very much worth it.",
+          "date": "September 2019",
+          "user_id": 14,
+          "product_id": 1
+      },
+      {
+          "id": 9588628,
+          "reviewbody": " The place smelled very bad!",
+          "date": "March 2018",
+          "user_id": 29,
+          "product_id": 1
+      },
+      {
+          "id": 9665549,
+          "reviewbody": " We had so much fun! BEST TRIP EVER! The view form the back porch was to die for.",
+          "date": "June 2010",
+          "user_id": 19,
+          "product_id": 1
+      },
+      {
+          "id": 9811474,
+          "reviewbody": " I wish I could have stayed longer. BEST TRIP EVER!",
+          "date": "June 2004",
+          "user_id": 38,
+          "product_id": 1
+      },
+      {
+          "id": 9936273,
+          "reviewbody": " Why didn't I find this place sooner? But seriously tell all your friends! And I would do it again!",
+          "date": "December 2006",
+          "user_id": 1,
+          "product_id": 1
+      }
+  ],
+  "fields": [
+      {
+          "name": "id",
+          "tableID": 16860,
+          "columnID": 1,
+          "dataTypeID": 23,
+          "dataTypeSize": 4,
+          "dataTypeModifier": -1,
+          "format": "text"
+      },
+      {
+          "name": "reviewbody",
+          "tableID": 16860,
+          "columnID": 2,
+          "dataTypeID": 1043,
+          "dataTypeSize": -1,
+          "dataTypeModifier": 1004,
+          "format": "text"
+      },
+      {
+          "name": "date",
+          "tableID": 16860,
+          "columnID": 3,
+          "dataTypeID": 1043,
+          "dataTypeSize": -1,
+          "dataTypeModifier": 34,
+          "format": "text"
+      },
+      {
+          "name": "user_id",
+          "tableID": 16860,
+          "columnID": 4,
+          "dataTypeID": 23,
+          "dataTypeSize": 4,
+          "dataTypeModifier": -1,
+          "format": "text"
+      },
+      {
+          "name": "product_id",
+          "tableID": 16860,
+          "columnID": 5,
+          "dataTypeID": 23,
+          "dataTypeSize": 4,
+          "dataTypeModifier": -1,
+          "format": "text"
+      }
+  ],
+  "_parsers": [
+      null,
+      null,
+      null,
+      null,
+      null
+  ],
+  "_types": {
+      "_types": {
+          "arrayParser": {},
+          "builtins": {
+              "BOOL": 16,
+              "BYTEA": 17,
+              "CHAR": 18,
+              "INT8": 20,
+              "INT2": 21,
+              "INT4": 23,
+              "REGPROC": 24,
+              "TEXT": 25,
+              "OID": 26,
+              "TID": 27,
+              "XID": 28,
+              "CID": 29,
+              "JSON": 114,
+              "XML": 142,
+              "PG_NODE_TREE": 194,
+              "SMGR": 210,
+              "PATH": 602,
+              "POLYGON": 604,
+              "CIDR": 650,
+              "FLOAT4": 700,
+              "FLOAT8": 701,
+              "ABSTIME": 702,
+              "RELTIME": 703,
+              "TINTERVAL": 704,
+              "CIRCLE": 718,
+              "MACADDR8": 774,
+              "MONEY": 790,
+              "MACADDR": 829,
+              "INET": 869,
+              "ACLITEM": 1033,
+              "BPCHAR": 1042,
+              "VARCHAR": 1043,
+              "DATE": 1082,
+              "TIME": 1083,
+              "TIMESTAMP": 1114,
+              "TIMESTAMPTZ": 1184,
+              "INTERVAL": 1186,
+              "TIMETZ": 1266,
+              "BIT": 1560,
+              "VARBIT": 1562,
+              "NUMERIC": 1700,
+              "REFCURSOR": 1790,
+              "REGPROCEDURE": 2202,
+              "REGOPER": 2203,
+              "REGOPERATOR": 2204,
+              "REGCLASS": 2205,
+              "REGTYPE": 2206,
+              "UUID": 2950,
+              "TXID_SNAPSHOT": 2970,
+              "PG_LSN": 3220,
+              "PG_NDISTINCT": 3361,
+              "PG_DEPENDENCIES": 3402,
+              "TSVECTOR": 3614,
+              "TSQUERY": 3615,
+              "GTSVECTOR": 3642,
+              "REGCONFIG": 3734,
+              "REGDICTIONARY": 3769,
+              "JSONB": 3802,
+              "REGNAMESPACE": 4089,
+              "REGROLE": 4096
+          }
+      },
+      "text": {},
+      "binary": {}
+  },
+  "RowCtor": null,
+  "rowAsArray": false
+}
