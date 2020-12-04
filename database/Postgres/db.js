@@ -41,11 +41,20 @@ const addReviews = () => {
   pool.end();
 };
 
+const getReviews = (productId, cb) => {
+  var query = 'SELECT * FROM reviews WHERE product_id = $1';
+  pool.query(query, [productId])
+    .then(data => {
+      cb(data);
+    })
+    .catch(e => console.error(e.stack));
+};
 
-addUsers();
-addProducts();
-addReviews();
 
 module.exports = {
   pool,
+  addUsers,
+  addProducts,
+  addReviews,
+  getReviews
 };

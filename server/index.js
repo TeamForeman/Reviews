@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/db.js');
+const pool = require('../database/Postgres/db.js');
 const path = require('path');
 const app = express();
 const port = 3006;
@@ -12,8 +13,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 app.get('/api/reviews-module/reviews/:id', (req, res) => {
-  db.getAllDataFromTable('reviews', req.params.id, (err, results) => {
-    err ? console.log(err) : res.send(results);
+  // db.getAllDataFromTable('reviews', req.params.id, (err, results) => {
+  //   err ? console.log(err) : res.send(results);
+  // });
+  pool.getReviews(req.params.id, (data) => {
+    res.send(data);
   });
 });
 
