@@ -14,7 +14,7 @@ CREATE TABLE products (
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(30),
-  profilePic VARCHAR(200)
+  "profilePic" VARCHAR(200)
 );
 
 
@@ -37,7 +37,7 @@ CREATE TABLE ratings (
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
-  reviewBody VARCHAR(1000),
+  "reviewBody" VARCHAR(1000),
   date VARCHAR(30),
   user_id INT,
   product_id INT,

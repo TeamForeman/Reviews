@@ -34,11 +34,12 @@ class App extends React.Component {
     var id = window.location.pathname.split('/');
     id = id[id.length - 1];
     if (id.length === 0) {
-      id = 100;
+      id = 123;
     }
 
     axios.get(`/api/reviews-module/reviews/${id}`)
       .then(data => {
+        console.log(data.data);
         this.setState({
           reviews: data.data,
           modalReviews: data.data
@@ -81,6 +82,7 @@ class App extends React.Component {
   //SPLITS PARAGRAPH IN TWO FOR READMORE BUTTON
   readMore (string) {
     var position = 100;
+    var newString = 123;
     var newString = [string.slice(0, position), string.slice(position)];
     return newString;
   }

@@ -16,7 +16,7 @@
     "createData": "node database/Postgres/psqlSeed/createData.js",
     "reset": "psql fabianyee -f database/Postgres/psqlschema.sql",
     "test": "jest",
-    "seedPsql": "node database/Postgres/db.js",
+    "seedPsql": "node database/Postgres/seeder.js",
     "seedMongo": "time mongoimport --type csv -d beartnt_reviews -c reviews --headerline --drop database/Postgres/psqlSeed/user.csv && time mongoimport --type csv -d beartnt_reviews -c reviews --headerline --drop database/Postgres/psqlSeed/product.csv && time mongoimport --type csv -d beartnt_reviews -c reviews --headerline --drop database/Postgres/psqlSeed/review.csv"
   },
   "dependencies": {

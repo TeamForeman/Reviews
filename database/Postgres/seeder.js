@@ -1,5 +1,6 @@
-const {addUsers, addProducts, addReviews} = require('./Postgres/db.js');
+const { addUsers, addProducts, addReviews, addRatings } = require('./db.js');
 
 addUsers();
 addProducts();
+addRatings();
 addReviews();

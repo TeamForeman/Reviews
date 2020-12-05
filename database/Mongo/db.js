@@ -49,13 +49,10 @@ const getReviews = (productId, cb) => {
   review.find({'product_id': productId}, (err, data) => {
     if (err) { return console.error(err.stack); }
     cb(data);
-    db.close();
   });
 };
 
-getReviews(10999, (data) => {
-  console.log(data);
-});
+
 
 module.exports = {
   getReviews,

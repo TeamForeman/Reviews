@@ -13,6 +13,7 @@ database/seeder/reviews.csv
 database/Postgres/psqlSeed/product.csv
 database/Postgres/psqlSeed/review.csv
 database/Postgres/psqlSeed/user.csv
+database/Postgres/psqlSeed/rating.csv
 
 pids
 *.pid
