@@ -1,4 +1,9 @@
-const {createUserCSV, createProductCSV, createReviewCSV, createRatingCSV } = require('./faker.js');
+const {
+  createUserCSV,
+  createProductCSV,
+  createReviewCSV,
+  createRatingCSV,
+} = require('./faker.js');
 
 createUserCSV();
 createRatingCSV(10000000);
