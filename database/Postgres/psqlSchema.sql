@@ -13,7 +13,7 @@ CREATE TABLE products (
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(30),
+  name VARCHAR(50),
   "profilePic" VARCHAR(200)
 );
 

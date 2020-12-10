@@ -42,9 +42,8 @@ const createUserCSVHeader = () => {
   userStream.end();
 };
 
-const userStream = fs.createWriteStream(`${__dirname}/user.csv`, { flags: 'a' });
-
 const addUsersToCSV = (users) => {
+  const userStream = fs.createWriteStream(`${__dirname}/user.csv`, { flags: 'a' });
   for (let i = 0; i < users.length; i++) {
     userStream.write(`${users[i].name},${users[i].profilePic}\n`);
   }
@@ -72,8 +71,8 @@ const createProductCSVHeader = () => {
   productStream.end();
 };
 
-const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
 const addProductsToCSV = (n) => {
+  const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
   while (n > 0) {
     const { description } = createProduct();
     const write = !productStream.write(`${description}\n`);
