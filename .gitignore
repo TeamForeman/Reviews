@@ -7,6 +7,7 @@ npm-debug.log
 node_modules/
 .env
 public/bundle.js
+newrelic.js
 
 database/seeder/ratings.csv
 database/seeder/reviews.csv

@@ -1,17 +1,21 @@
+/* eslint-disable no-console */
+/* eslint-disable no-loop-func */
+/* eslint-disable consistent-return */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
 const faker = require('faker');
 // const db = require('../db.js');
-const { names, profilePics, sentences } = require('./fakedata.js');
 const fs = require('fs');
+const { names, profilePics, sentences } = require('./fakedata.js');
 
-//RANDOM NUMBER GENERATOR
+// RANDOM NUMBER GENERATOR
 const rng = (min, max, oneDecimalPoint) => {
   if (oneDecimalPoint) {
     min *= 10;
     max *= 10;
     return ((Math.floor(Math.random() * (max - min + 1)) + min) / 10);
-  } else {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 /*
@@ -20,31 +24,25 @@ USER GENERATORS
 -----------------------------------------
 */
 
-const createUser = (name, profilePic) => {
-  return {
-    name,
-    profilePic
-  };
-};
+const createUser = (name, profilePic) => ({
+  name,
+  profilePic,
+});
 
 const randomPic = () => {
-  let randomIndex = rng(0, profilePics.length - 1);
+  const randomIndex = rng(0, profilePics.length - 1);
   return profilePics[randomIndex];
 };
 
-const createUsersArray = (users) => {
-  return users.map(user => {
-    return createUser(user, randomPic());
-  });
-};
+const createUsersArray = (users) => users.map((user) => createUser(user, randomPic()));
 
 const createUserCSVHeader = () => {
-  let userStream = fs.createWriteStream(__dirname + '/user.csv');
+  const userStream = fs.createWriteStream(`${__dirname}/user.csv`);
   userStream.write('name,profilePic\n');
 };
 
 const addUsersToCSV = (users) => {
-  let userStream = fs.createWriteStream(__dirname + '/user.csv', {flags: 'a'});
+  const userStream = fs.createWriteStream(`${__dirname}/user.csv`, { flags: 'a' });
   for (let i = 0; i < users.length; i++) {
     userStream.write(`${users[i].name},${users[i].profilePic}\n`);
   }
@@ -55,30 +53,26 @@ const createUserCSV = () => {
   addUsersToCSV(createUsersArray(names));
 };
 
-
-
 /*
 -----------------------------------------
 PRODUCT GENERATORS
 -----------------------------------------
 */
 
-const createProduct = () => {
-  return {
-    description: faker.commerce.productName()
-  };
-};
+const createProduct = () => ({
+  description: faker.commerce.productName(),
+});
 
 const createProductCSVHeader = () => {
-  let productStream = fs.createWriteStream(__dirname + '/product.csv');
+  const productStream = fs.createWriteStream(`${__dirname}/product.csv`);
   productStream.write('description\n');
 };
 
 const addProductsToCSV = (n) => {
-  let productStream = fs.createWriteStream(__dirname + '/product.csv', {flags: 'a'});
+  const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
   while (n > 0) {
-    let { description } = createProduct();
-    let write = !productStream.write(`${description}\n`);
+    const { description } = createProduct();
+    const write = !productStream.write(`${description}\n`);
     if (write) {
       return productStream.once('drain', () => {
         console.log(`${n} records left`);
@@ -102,13 +96,13 @@ RATINGS GENERATORS
 */
 
 const createRatingCSVHeader = () => {
-  let productStream = fs.createWriteStream(__dirname + '/rating.csv');
+  const productStream = fs.createWriteStream(`${__dirname}/rating.csv`);
   productStream.write('average,cleanliness,communication,checkin,accuracy,location,value,user_id,product_id\n');
 };
 
 const createRating = () => {
-  var ratings = [];
-  for (var i = 0; i < 6; i += 1) {
+  const ratings = [];
+  for (let i = 0; i < 6; i += 1) {
     ratings.push(rng(0, 5, true));
   }
   ratings.unshift((ratings.reduce((a, b) => (a + b)) / 6).toFixed(2));
@@ -118,10 +112,10 @@ const createRating = () => {
 };
 
 const addRatingsToCSV = (n) => {
-  let ratingStream = fs.createWriteStream(__dirname + '/rating.csv', {flags: 'a'});
+  const ratingStream = fs.createWriteStream(`${__dirname}/rating.csv`, { flags: 'a' });
   while (n > 0) {
-    let rating = createRating();
-    let write = !ratingStream.write(`${rating}\n`);
+    const rating = createRating();
+    const write = !ratingStream.write(`${rating}\n`);
     if (write) {
       return ratingStream.once('drain', () => {
         console.log(`${n} records left`);
@@ -147,46 +141,42 @@ REVIEWS GENERATORS
 */
 
 const randomParagraph = (listOfSentences) => {
-  debugger;
   let length = rng(0, listOfSentences.length - 1);
   let paragraph = '';
   while (length >= 0) {
-    let randomIndex = rng(0, listOfSentences.length - 1);
-    paragraph += ' ' + listOfSentences[randomIndex];
+    const randomIndex = rng(0, listOfSentences.length - 1);
+    paragraph += ` ${listOfSentences[randomIndex]}`;
     length -= rng(1, 10);
   }
   return paragraph;
 };
 
-const randomDate = () => {
-  return `${faker.date.month()} ${rng(2000, 2020)}`;
-};
+const randomDate = () => `${faker.date.month()} ${rng(2000, 2020)}`;
 
-const createReview = () => {
-  return {
-    reviewBody: randomParagraph(sentences),
-    date: randomDate(),
-    userId: rng(1, 40),
-    productId: rng(1, 100000)
-  };
-};
+const createReview = () => ({
+  reviewBody: randomParagraph(sentences),
+  date: randomDate(),
+  userId: rng(1, 40),
+  productId: rng(1, 100000),
+});
 
 const createReviewCSVHeader = () => {
-  let productStream = fs.createWriteStream(__dirname + '/review.csv');
+  const productStream = fs.createWriteStream(`${__dirname}/review.csv`);
   productStream.write('reviewBody,date,user_id,product_id\n');
 };
 
 const addReviewsToCSV = (n) => {
-  let reviewStream = fs.createWriteStream(__dirname + '/review.csv', {flags: 'a'});
+  const reviewStream = fs.createWriteStream(`${__dirname}/review.csv`, { flags: 'a' });
   console.log('Creating Reviews');
   for (let i = 0; i < n; i++) {
-    let { reviewBody, date, userId, productId } = createReview();
+    const {
+      reviewBody, date, userId, productId,
+    } = createReview();
     reviewStream.write(`${reviewBody},${date},${userId},${productId}\n`);
     if (i % (n / 10) === 0) {
-      console.log(`${i / n * 100}% created`);
+      console.log(`${(i / n) * 100}% created`);
     }
   }
-
 
   console.log('finished creating Reviews');
 };
@@ -196,13 +186,11 @@ const createReviewCSV = (n) => {
   addReviewsToCSV(n);
 };
 
-
-
 module.exports = {
   createUserCSV,
   createProductCSV,
   addProductsToCSV,
   createReviewCSV,
   addReviewsToCSV,
-  createRatingCSV
+  createRatingCSV,
 };

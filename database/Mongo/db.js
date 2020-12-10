@@ -1,62 +1,60 @@
 const mongoose = require('mongoose');
 
-var mongoDB = 'mongodb://localhost/beartnt_reviews';
-//beartnt_reviews
+const mongoDB = 'mongodb://localhost/beartnt_reviews';
+// beartnt_reviews
 mongoose.connect(mongoDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-// const userSchema = new mongoose.Schema({
-//   name: String
-// });
+const { Schema } = mongoose;
 
-// const Kitten = mongoose.model('Kitten', kittySchema);
-
-// Kitten.find(function (err, kittens) {
-//   if (err) {
-//     return console.error(err);
-//   }
-//   console.log(kittens);
-//   db.close();
-// });
-
-var Schema = mongoose.Schema;
-
-var userSchema = new Schema({
+const userSchema = new Schema({
   name: String,
-  profilePic: String
+  profilePic: String,
 });
 
-var reviewSchema = new Schema({
+const reviewSchema = new Schema({
   reviewBody: String,
   date: String,
-  'user_id': Number,
-  'product_id': Number
+  user_id: Number,
+  product_id: Number,
 });
 
 const user = mongoose.model('user', userSchema);
 const review = mongoose.model('review', reviewSchema);
 
-
 const getReviews = (productId, cb) => {
-  review.find({'product_id': productId}, (err, data) => {
+  review.find({ product_id: productId }, (err, data) => {
     if (err) { return console.error(err.stack); }
-    cb(data);
+    return cb(data);
   });
 };
 
+const getUserId = (name, cb) => {
+  user.find({ name }, (err, data) => {
+    if (err) { return console.error(err.stack); }
+    return cb(data);
+  });
+};
 
+getUserId('Fabian Yee', (data) => {
+  console.log(data);
+});
+
+// const postReviews = (productId, cb) => {
+//   review.find({'product_id': productId}, (err, data) => {
+//     if (err) { return console.error(err.stack); }
+//     cb(data);
+//   });
+// };
 
 module.exports = {
   getReviews,
 };
-
-
-

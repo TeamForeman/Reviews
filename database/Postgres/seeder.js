@@ -1,4 +1,9 @@
-const { addUsers, addProducts, addReviews, addRatings } = require('./db.js');
+const {
+  addUsers,
+  addProducts,
+  addReviews,
+  addRatings,
+} = require('./db.js');
 
 addUsers();
 addProducts();
