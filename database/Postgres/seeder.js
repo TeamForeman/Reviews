@@ -6,6 +6,6 @@ const {
 } = require('./db.js');
 
 addUsers();
-// addProducts();
-// addRatings();
-// addReviews();
+addProducts();
+addRatings();
+addReviews();

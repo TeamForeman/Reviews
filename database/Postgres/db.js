@@ -9,7 +9,7 @@ const pool = new Pool({
 });
 
 const addUsers = () => {
-  const query = 'COPY users(name, "profilePic") FROM \'/Users/fabianyee/Desktop/HackReactor/SDC/Customer-Reviews-Service/database/Postgres/psqlSeed/user.csv\' DELIMITER \',\' CSV HEADER';
+  const query = `COPY users(name, "profilePic") FROM '${__dirname}/psqlSeed/user.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
@@ -27,7 +27,7 @@ const addUsers = () => {
 };
 
 const addProducts = () => {
-  const query = 'COPY products(description) FROM \'/Users/fabianyee/Desktop/HackReactor/SDC/Customer-Reviews-Service/database/Postgres/psqlSeed/product.csv\' DELIMITER \',\' CSV HEADER';
+  const query = `COPY products(description) FROM '${__dirname}/psqlSeed/product.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
@@ -38,7 +38,7 @@ const addProducts = () => {
 };
 
 const addRatings = () => {
-  const query = 'COPY ratings(average, cleanliness, communication, checkin, accuracy, location, value, user_id, product_id) FROM \'/Users/fabianyee/Desktop/HackReactor/SDC/Customer-Reviews-Service/database/Postgres/psqlSeed/rating.csv\' DELIMITER \',\' CSV HEADER';
+  const query = `COPY ratings(average, cleanliness, communication, checkin, accuracy, location, value, user_id, product_id) FROM '${__dirname}/psqlSeed/rating.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
@@ -56,12 +56,12 @@ const addRatings = () => {
 };
 
 const addReviews = () => {
-  const query = 'COPY reviews("reviewBody", date, user_id, product_id) FROM \'/Users/fabianyee/Desktop/HackReactor/SDC/Customer-Reviews-Service/database/Postgres/psqlSeed/review.csv\' DELIMITER \',\' CSV HEADER';
+  const query = `COPY reviews("reviewBody", date, user_id, product_id) FROM '${__dirname}/psqlSeed/review.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
     } else {
-      console.log('products added to the database');
+      console.log('reviews added to the database');
       pool.query('CREATE INDEX product_id_on_reviews on reviews(product_id)', (err, res) => {
         if (err) {
           console.error(err.stack);
