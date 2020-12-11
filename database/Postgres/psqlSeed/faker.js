@@ -36,17 +36,17 @@ const randomPic = () => {
 
 const createUsersArray = (users) => users.map((user) => createUser(user, randomPic()));
 
-const createUserCSVHeader = () => {
-  const userStream = fs.createWriteStream(`${__dirname}/user.csv`);
-  userStream.write('name,profilePic\n');
-  userStream.end();
-};
-
 const addUsersToCSV = (users) => {
   const userStream = fs.createWriteStream(`${__dirname}/user.csv`, { flags: 'a' });
   for (let i = 0; i < users.length; i++) {
     userStream.write(`${users[i].name},${users[i].profilePic}\n`);
   }
+  userStream.end();
+};
+
+const createUserCSVHeader = () => {
+  const userStream = fs.createWriteStream(`${__dirname}/user.csv`);
+  userStream.write('name,profilePic\n');
   userStream.end();
 };
 
@@ -64,15 +64,12 @@ PRODUCT GENERATORS
 const createProduct = () => ({
   description: faker.commerce.productName(),
 });
-
+const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
 const createProductCSVHeader = () => {
-  const productStream = fs.createWriteStream(`${__dirname}/product.csv`);
   productStream.write('description\n');
-  productStream.end();
 };
 
 const addProductsToCSV = (n) => {
-  const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
   while (n > 0) {
     const { description } = createProduct();
     const write = !productStream.write(`${description}\n`);
@@ -99,11 +96,6 @@ RATINGS GENERATORS
 -----------------------------------------
 */
 
-const createRatingCSVHeader = () => {
-  const ratingStream = fs.createWriteStream(`${__dirname}/rating.csv`);
-  ratingStream.write('average,cleanliness,communication,checkin,accuracy,location,value,user_id,product_id\n');
-  ratingStream.end();
-};
 
 const createRating = () => {
   const ratings = [];
@@ -117,6 +109,11 @@ const createRating = () => {
 };
 
 const ratingStream = fs.createWriteStream(`${__dirname}/rating.csv`, { flags: 'a' });
+
+const createRatingCSVHeader = () => {
+  ratingStream.write('average,cleanliness,communication,checkin,accuracy,location,value,user_id,product_id\n');
+};
+
 const addRatingsToCSV = (n) => {
   while (n > 0) {
     const rating = createRating();
@@ -130,7 +127,7 @@ const addRatingsToCSV = (n) => {
     n--;
   }
   ratingStream.end();
-  console.log('finished creating Products');
+  console.log('finished creating Ratings');
 };
 
 const createRatingCSV = (n) => {
@@ -165,14 +162,12 @@ const createReview = () => ({
   userId: rng(1, 40),
   productId: rng(1, 100000),
 });
+const reviewStream = fs.createWriteStream(`${__dirname}/review.csv`, { flags: 'a' });
 
 const createReviewCSVHeader = () => {
-  const reviewStream = fs.createWriteStream(`${__dirname}/review.csv`);
   reviewStream.write('reviewBody,date,user_id,product_id\n');
-  reviewStream.end();
 };
 
-const reviewStream = fs.createWriteStream(`${__dirname}/review.csv`, { flags: 'a' });
 const addReviewsToCSV = (n) => {
   while (n > 0) {
     const {
