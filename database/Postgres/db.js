@@ -11,7 +11,7 @@ const pool = new Pool({
 
 
 const addUsers = () => {
-  const query = `COPY users(name, "profilePic") FROM '${__dirname}/psqlSeed/user.csv' DELIMITER ',' CSV HEADER`;
+  const query = `COPY users(name, "profilePic") FROM '/tmp/user.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
@@ -29,7 +29,7 @@ const addUsers = () => {
 };
 
 const addProducts = () => {
-  const query = `COPY products(description) FROM '${__dirname}/psqlSeed/product.csv' DELIMITER ',' CSV HEADER`;
+  const query = `COPY products(description) FROM '/tmp/product.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
@@ -40,7 +40,7 @@ const addProducts = () => {
 };
 
 const addRatings = () => {
-  const query = `COPY ratings(average, cleanliness, communication, checkin, accuracy, location, value, user_id, product_id) FROM '${__dirname}/psqlSeed/rating.csv' DELIMITER ',' CSV HEADER`;
+  const query = `COPY ratings(average, cleanliness, communication, checkin, accuracy, location, value, user_id, product_id) FROM '/tmp/rating.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
@@ -58,7 +58,7 @@ const addRatings = () => {
 };
 
 const addReviews = () => {
-  const query = `COPY reviews("reviewBody", date, user_id, product_id) FROM '${__dirname}/psqlSeed/review.csv' DELIMITER ',' CSV HEADER`;
+  const query = `COPY reviews("reviewBody", date, user_id, product_id) FROM '/tmp/review.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);

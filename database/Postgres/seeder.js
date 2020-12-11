@@ -7,7 +7,7 @@ const {
 
 
 //addUsers();
-// addProducts();
-// addRatings();
-// addReviews();
+addProducts();
+addRatings();
+addReviews();
 
