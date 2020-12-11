@@ -14,7 +14,7 @@
     "start:pm2": "pm2 start ./server/index.js",
     "stop:pm2": "pm2 stop ./server/index.js",
     "createData": "node database/Postgres/psqlSeed/createData.js",
-    "reset": "psql ec2-user -f database/Postgres/psqlSchema.sql",
+    "reset": "psql fabianyee -f database/Postgres/psqlSchema.sql",
     "test": "jest",
     "stressTest": "k6 run stressTest.js",
     "seedPsql": "node database/Postgres/seeder.js",
