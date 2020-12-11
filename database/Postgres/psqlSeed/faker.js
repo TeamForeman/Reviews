@@ -37,13 +37,13 @@ const randomPic = () => {
 const createUsersArray = (users) => users.map((user) => createUser(user, randomPic()));
 
 const createUserCSVHeader = () => {
-  const userStream = fs.createWriteStream(`${__dirname}/user.csv`);
+  const userStream = fs.createWriteStream(`/tmp/user.csv`);
   userStream.write('name,profilePic\n');
   userStream.end();
 };
 
 const addUsersToCSV = (users) => {
-  const userStream = fs.createWriteStream(`${__dirname}/user.csv`, { flags: 'a' });
+  const userStream = fs.createWriteStream(`/tmp/user.csv`, { flags: 'a' });
   for (let i = 0; i < users.length; i++) {
     userStream.write(`${users[i].name},${users[i].profilePic}\n`);
   }
@@ -66,13 +66,13 @@ const createProduct = () => ({
 });
 
 const createProductCSVHeader = () => {
-  const productStream = fs.createWriteStream(`${__dirname}/product.csv`);
+  const productStream = fs.createWriteStream(`/tmp/product.csv`);
   productStream.write('description\n');
   productStream.end();
 };
 
 const addProductsToCSV = (n) => {
-  const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
+  const productStream = fs.createWriteStream(`/tmp/product.csv`, { flags: 'a' });
   while (n > 0) {
     const { description } = createProduct();
     const write = !productStream.write(`${description}\n`);
@@ -100,7 +100,7 @@ RATINGS GENERATORS
 */
 
 const createRatingCSVHeader = () => {
-  const ratingStream = fs.createWriteStream(`${__dirname}/rating.csv`);
+  const ratingStream = fs.createWriteStream(`/tmp/rating.csv`);
   ratingStream.write('average,cleanliness,communication,checkin,accuracy,location,value,user_id,product_id\n');
   ratingStream.end();
 };
@@ -116,7 +116,7 @@ const createRating = () => {
   return ratings.join(',');
 };
 
-const ratingStream = fs.createWriteStream(`${__dirname}/rating.csv`, { flags: 'a' });
+const ratingStream = fs.createWriteStream(`/tmp/rating.csv`, { flags: 'a' });
 const addRatingsToCSV = (n) => {
   while (n > 0) {
     const rating = createRating();
