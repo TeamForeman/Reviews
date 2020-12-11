@@ -5,7 +5,7 @@ const {
   addRatings,
 } = require('./db.js');
 
-addUsers();
+//addUsers();
 // addProducts();
 // addRatings();
 // addReviews();

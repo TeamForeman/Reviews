@@ -8,8 +8,10 @@ const pool = new Pool({
   database: process.env.PGDATABASE,
 });
 
+
+
 const addUsers = () => {
-  const query = 'COPY users(name, "profilePic") FROM \'/Users/fabianyee/Desktop/HackReactor/SDC/Customer-Reviews-Service/database/Postgres/psqlSeed/user.csv\' DELIMITER \',\' CSV HEADER';
+  const query = `COPY users(name, "profilePic") FROM '${__dirname}/psqlSeed/user.csv' DELIMITER ',' CSV HEADER`;
   pool.query(query, (err, res) => {
     if (err) {
       console.error(err.stack);
