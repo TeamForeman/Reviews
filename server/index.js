@@ -14,10 +14,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/loaderio-90f9b960fe4a88e6984ef95ec150201b', (req, res) => {
-  res.sendFile('../token');
-})
-
 app.get('/api/reviews-module/reviews/:id', (req, res) => {
   pool.getReviews(req.params.id, (data) => {
     res.send(data);
