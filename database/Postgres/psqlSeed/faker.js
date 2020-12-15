@@ -65,7 +65,7 @@ PRODUCT GENERATORS
 const createProduct = () => ({
   description: faker.commerce.productName(),
 });
-const productStream = fs.createWriteStream(`${__dirname}/product.csv`, { flags: 'a' });
+const productStream = fs.createWriteStream(`/tmp/product.csv`, { flags: 'a' });
 const createProductCSVHeader = () => {
   productStream.write('description\n');
 };
@@ -162,7 +162,7 @@ const createReview = () => ({
   userId: rng(1, 40),
   productId: rng(1, 100000),
 });
-const reviewStream = fs.createWriteStream(`${__dirname}/review.csv`, { flags: 'a' });
+const reviewStream = fs.createWriteStream(`/tmp/review.csv`, { flags: 'a' });
 
 const createReviewCSVHeader = () => {
   reviewStream.write('reviewBody,date,user_id,product_id\n');

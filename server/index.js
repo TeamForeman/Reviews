@@ -3,16 +3,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../database/db.js');
+//const db = require('../database/db.js');
 const pool = require('../database/Postgres/db.js');
 // const mongo = require('../database/Mongo/db.js');
 const app = express();
-const port = 3006;
+const port = 1111;
 require('newrelic');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, '../public')));
+
+app.get('/loaderio-90f9b960fe4a88e6984ef95ec150201b', (req, res) => {
+  res.sendFile('../token');
+})
 
 app.get('/api/reviews-module/reviews/:id', (req, res) => {
   pool.getReviews(req.params.id, (data) => {

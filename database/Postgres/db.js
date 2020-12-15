@@ -8,7 +8,7 @@ const pool = new Pool({
   database: process.env.PGDATABASE,
 });
 
-
+//I was here
 
 const addUsers = () => {
   const query = `COPY users(name, "profilePic") FROM '/tmp/user.csv' DELIMITER ',' CSV HEADER`;
